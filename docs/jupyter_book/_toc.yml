@@ -1,0 +1,8 @@
+format: jb-article
+root: intro
+sections:
+- file: notebooks
+- file: markdown
+- file: scripts/abf_plot_all_sweeps.md    
+- file: scripts/abf_scan.md
+- file: scripts/abf_plot_single_sweep.md

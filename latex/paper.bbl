@@ -1,0 +1,1733 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{ardelean2023b}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=bc5ceb1b45489a3cda47cc9122824848}{%
+           family={Ardelean},
+           familyi={A\bibinitperiod},
+           given={Adriana-Ioana},
+           giveni={A\bibinithyphendelim I\bibinitperiod}}}%
+        {{hash=e05f49dfd390c2d566bb462ef7edca17}{%
+           family={Ardelean},
+           familyi={A\bibinitperiod},
+           given={Eugen-Richard},
+           giveni={E\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=5d85779d18652ae7189286f8411afaaf}{%
+           family={Moca},
+           familyi={M\bibinitperiod},
+           given={Vasile\bibnamedelima Vlad},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=7ee7d59b928e9a1f70ebb9d7ee1f6eb8}{%
+           family={{Mureşan}},
+           familyi={M\bibinitperiod},
+           given={Raul\bibnamedelima Cristian},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=14831f52e1582922244a30165ece3938}{%
+           family={{Dînşoreanu}},
+           familyi={D\bibinitperiod},
+           given={Mihaela},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad90f777fe9a84b5099f2b5342ae5e52}
+      \strng{fullhash}{9d60fe8d715b8b149c311f90816acffd}
+      \strng{bibnamehash}{9d60fe8d715b8b149c311f90816acffd}
+      \strng{authorbibnamehash}{9d60fe8d715b8b149c311f90816acffd}
+      \strng{authornamehash}{ad90f777fe9a84b5099f2b5342ae5e52}
+      \strng{authorfullhash}{9d60fe8d715b8b149c311f90816acffd}
+      \field{extraname}{1}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 IEEE 19th International Conference on Intelligent Computer Communication and Processing (ICCP)}
+      \field{title}{Burst detection in neuronal activity}
+      \field{year}{2023}
+      \field{pages}{349\bibrangedash 356}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICCP60212.2023.10398703
+      \endverb
+      \keyw{Measurement;Correlation;Neurons;Information processing;Recording;Timing;Reliability;burst;superlet;spectrogram;correlation}
+    \endentry
+    \entry{ardelean2023a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=2cc8d69446d88519d93aef627eb71272}{%
+           family={Ardelean},
+           familyi={A\bibinitperiod},
+           given={Elena-Roxana},
+           giveni={E\bibinithyphendelim R\bibinitperiod}}}%
+        {{hash=903d2c0c863c02f44035804bdc62d88e}{%
+           family={Coporîie},
+           familyi={C\bibinitperiod},
+           given={Andrei},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c6495240701e542bf09fccec92f46e4b}{%
+           family={Ichim},
+           familyi={I\bibinitperiod},
+           given={Ana-Maria},
+           giveni={A\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=14831f52e1582922244a30165ece3938}{%
+           family={Dînşoreanu},
+           familyi={D\bibinitperiod},
+           given={Mihaela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=06bf84b8456dd8539accb8ca4e93f10b}{%
+           family={Mure{\cb{s}}an},
+           familyi={M\bibinitperiod},
+           given={Raul\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Public Library of Science}%
+      }
+      \strng{namehash}{18211c8e5c72cef02f1794f7598c70df}
+      \strng{fullhash}{b59114f25110c67d532005ac98d87d06}
+      \strng{bibnamehash}{b59114f25110c67d532005ac98d87d06}
+      \strng{authorbibnamehash}{b59114f25110c67d532005ac98d87d06}
+      \strng{authornamehash}{18211c8e5c72cef02f1794f7598c70df}
+      \strng{authorfullhash}{b59114f25110c67d532005ac98d87d06}
+      \field{extraname}{2}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{PLoS ONE}
+      \field{number}{3}
+      \field{title}{A study of autoencoders as a feature extraction technique for spike sorting}
+      \field{volume}{18}
+      \field{year}{2023}
+      \field{pages}{e0282810}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1371/journal.pone.0282810
+      \endverb
+    \endentry
+    \entry{bruderle2009a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=b3af3fc7c51c8bfd8ed2bd68f5d9cffa}{%
+           family={Brüderle},
+           familyi={B\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=6e458320ec30f63aaade5087a97f0ba8}{%
+           family={Müller},
+           familyi={M\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=72b1f79a6f35439abb27d2ca5236fb0b}{%
+           family={Davison},
+           familyi={D\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=81de766df0616d467f81f4cdcf3dde4e}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Eilif},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e3a280f03aeb697f5eed0311ad4c48b9}{%
+           family={Schemmel},
+           familyi={S\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2de48c26974701816987a7386c893c45}{%
+           family={Meier},
+           familyi={M\bibinitperiod},
+           given={Karlheinz},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{173cfb58bea413316b9b9ca761f11f8a}
+      \strng{fullhash}{9d76b623644322c98ca0175feb6be7aa}
+      \strng{bibnamehash}{173cfb58bea413316b9b9ca761f11f8a}
+      \strng{authorbibnamehash}{173cfb58bea413316b9b9ca761f11f8a}
+      \strng{authornamehash}{173cfb58bea413316b9b9ca761f11f8a}
+      \strng{authorfullhash}{9d76b623644322c98ca0175feb6be7aa}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neuromorphic hardware systems provide new possibilities for the neuroscience modeling community. Due to the intrinsic parallelism of the micro-electronic emulation of neural computation, such models are highly scalable without a loss of speed. However, the communities of software simulator users and neuromorphic engineering in neuroscience are rather disjoint. We present a software concept that provides the possibility to establish such hardware devices as valuable modeling tools. It is based on the integration of the hardware interface into a simulator-independent language which allows for unified experiment descriptions that can be run on various simulation platforms without modification, implying experiment portability and a huge simplification of the quantitative comparison of hardware and simulator results. We introduce an accelerated neuromorphic hardware device and describe the implementation of the proposed concept for this system. An example setup and results acquired by utilizing both the hardware system and a software simulator are demonstrated.}
+      \field{issn}{1662-5196}
+      \field{journaltitle}{Frontiers in Neuroinformatics}
+      \field{title}{Establishing a novel modeling tool: a python-based interface for a neuromorphic hardware system}
+      \field{volume}{3}
+      \field{year}{2009}
+      \true{nocite}
+      \field{pages}{17}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/neuro.11.017.2009
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.017.2009
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.017.2009
+      \endverb
+    \endentry
+    \entry{chen2013a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=03bd7d5826bc7b1c11f8759ff9a0573c}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Zhe},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \strng{fullhash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \strng{bibnamehash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \strng{authorbibnamehash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \strng{authornamehash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \strng{authorfullhash}{03bd7d5826bc7b1c11f8759ff9a0573c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational Intelligence and Neuroscience}
+      \field{title}{An overview of {Bayesian} methods for neural spike train analysis}
+      \field{year}{2013}
+      \verb{doi}
+      \verb https://doi.org/10.1155/2013/251905
+      \endverb
+    \endentry
+    \entry{chen_ziao2023a}{article}{}
+      \name{author}{7}{}{%
+        {{hash=af35e81346215015f7763bd069439eda}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ziao},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=e9ce6811f0a1c67385d9f1e49d14671d}{%
+           family={Headley},
+           familyi={H\bibinitperiod},
+           given={Drew\bibnamedelima B},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=82c6ddfdc409108bee1922d015c452f6}{%
+           family={Gomez-Alatorre},
+           familyi={G\bibinithyphendelim A\bibinitperiod},
+           given={Luisa\bibnamedelima F},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=408323fe4589f15a0e71a2e5700839a2}{%
+           family={Kanta},
+           familyi={K\bibinitperiod},
+           given={Vasiliki},
+           giveni={V\bibinitperiod}}}%
+        {{hash=12901d59d7a2f097003f7ff22cd3d6df}{%
+           family={Ho},
+           familyi={H\bibinitperiod},
+           given={K\bibnamedelima C},
+           giveni={K\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b6be6dff80843b73fc3d5eea4b8e8d92}{%
+           family={Pare},
+           familyi={P\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=358589573fb72d9125e8e757e0269d9d}{%
+           family={Nair},
+           familyi={N\bibinitperiod},
+           given={Satish\bibnamedelima S},
+           giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b813441bc13492b032b7351e298ea8f}
+      \strng{fullhash}{2cdc86d717d13c4f871569eb66750957}
+      \strng{bibnamehash}{7b813441bc13492b032b7351e298ea8f}
+      \strng{authorbibnamehash}{7b813441bc13492b032b7351e298ea8f}
+      \strng{authornamehash}{7b813441bc13492b032b7351e298ea8f}
+      \strng{authorfullhash}{2cdc86d717d13c4f871569eb66750957}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{BACKGROUND: Cognitive processes are associated with fast oscillations of the local field potential and electroencephalogram. There is a growing interest in targeting them because these are disrupted by aging and disease. This has proven challenging because they often occur as short-lasting bursts. Moreover, they are obscured by broad-band aperiodic activity reflecting other neural processes. These attributes have made it exceedingly difficult to develop analytical tools for estimating the reliability of detection methods. NEW METHOD: To address this challenge, we developed an open-source toolkit with four processing steps, that can be tailored to specific brain states and individuals. First, the power spectrum is decomposed into periodic and aperiodic components, each of whose properties are estimated. Second, the properties of the transient oscillatory bursts that contribute to the periodic component are derived and optimized to account for contamination from the aperiodic component. Third, using the burst properties and aperiodic power spectrum, surrogate neural signals are synthesized that match the observed signal's spectrotemporal properties. Lastly, oscillatory burst detection algorithms run on the surrogate signals are subjected to a receiver operating characteristic analysis, providing insight into their performance. RESULTS: The characterization algorithm extracted features of oscillatory bursts across multiple frequency bands and brain regions, allowing for recording-specific evaluation of detection performance. For our dataset, the optimal detection threshold for gamma bursts was found to be lower than the one commonly used. COMPARISON WITH EXISTING METHODS: Existing methods characterize the power spectrum, while ours evaluates the detection of oscillatory bursts. CONCLUSIONS: This pipeline facilitates the evaluation of thresholds for detection algorithms from individual recordings.}
+      \field{issn}{1872-678X (Electronic); 0165-0270 (Print); 0165-0270 (Linking)}
+      \field{journaltitle}{Journal of neuroscience methods}
+      \field{title}{Approaches to characterizing oscillatory burst detection algorithms for electrophysiological recordings.}
+      \field{volume}{391}
+      \field{year}{2023}
+      \field{pages}{109865}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jneumeth.2023.109865
+      \endverb
+      \keyw{Electroencephalogram; Local field potential; Oscillations; ROC; Signal detection}
+    \endentry
+    \entry{cocatre-zilgien1992a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=394c49bd7f59e0f68f6d5e7cedfa418a}{%
+           family={Cocatre-Zilgien},
+           familyi={C\bibinithyphendelim Z\bibinitperiod},
+           given={J.H.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=96c9a77f4f44700699bbfbde0d970048}{%
+           family={Delcomyn},
+           familyi={D\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{481fb8889919d750952bc022fe803241}
+      \strng{fullhash}{481fb8889919d750952bc022fe803241}
+      \strng{bibnamehash}{481fb8889919d750952bc022fe803241}
+      \strng{authorbibnamehash}{481fb8889919d750952bc022fe803241}
+      \strng{authornamehash}{481fb8889919d750952bc022fe803241}
+      \strng{authorfullhash}{481fb8889919d750952bc022fe803241}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A computer algorithm to identify `bursts' in trains of spikes is described. The algorithm works by constructing a histogram of interspike intervals, then analyzing the histogram to detect the critical interval value in the distribution that represents the break between short intervals within a burst and the longer intervals between bursts. When such a value is found, it is used as the `threshold' to determine those intervals in the spike train that lie within a burst and those that lie between bursts and, thereby, to identify the beginning and end of each burst in the train. The validity of the bursts is evaluated with a chi-square test. The performance of the algorithm and how it can be assessed is discussed.}
+      \field{issn}{0165-0270}
+      \field{journaltitle}{Journal of Neuroscience Methods}
+      \field{number}{1}
+      \field{title}{Identification of bursts in spike trains}
+      \field{volume}{41}
+      \field{year}{1992}
+      \field{pages}{19\bibrangedash 30}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1016/0165-0270(92)90120-3
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/0165027092901203
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/0165027092901203
+      \endverb
+      \keyw{Burst identification,Algorithm,Interspike interval histogram: Pattern analysis,Spike train}
+    \endentry
+    \entry{cotterill2016a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f00adce7514f8a8e56258a60ea0114fe}{%
+           family={Cotterill},
+           familyi={C\bibinitperiod},
+           given={Ellese},
+           giveni={E\bibinitperiod}}}%
+        {{hash=33b42f86f82398889aa2fa2a6c7b66a2}{%
+           family={Charlesworth},
+           familyi={C\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=1afb775412e61871a956711a4ab9c696}{%
+           family={Thomas},
+           familyi={T\bibinitperiod},
+           given={Christopher\bibnamedelima W},
+           giveni={C\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=9590bb6f776964c9723ca84548ef7e9e}{%
+           family={Paulsen},
+           familyi={P\bibinitperiod},
+           given={Ole},
+           giveni={O\bibinitperiod}}}%
+        {{hash=1a61e1206748b8ee3598b2b4d3371a91}{%
+           family={Eglen},
+           familyi={E\bibinitperiod},
+           given={Stephen\bibnamedelima J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{5}{%
+        {Cambridge Computational Biology Institute, University of Cambridge, Cambridge, United Kingdom;}%
+        {ec526@cam.ac.uk.; Department of Physiology, Development}%
+        {Neuroscience, Physiological Laboratory, University of Cambridge, Cambridge, United Kingdom.; Department of Physiology, Development}%
+        {Neuroscience, Physiological Laboratory, University of Cambridge, Cambridge, United Kingdom.; Department of Physiology, Development}%
+        {Neuroscience, Physiological Laboratory, University of Cambridge, Cambridge, United Kingdom.; Cambridge Computational Biology Institute, University of Cambridge, Cambridge, United Kingdom; and.}%
+      }
+      \strng{namehash}{c0d6cbeaba59c67e3078c255d22ea31d}
+      \strng{fullhash}{f4576fdd9abae5fdc31153aa357c6fdb}
+      \strng{bibnamehash}{f4576fdd9abae5fdc31153aa357c6fdb}
+      \strng{authorbibnamehash}{f4576fdd9abae5fdc31153aa357c6fdb}
+      \strng{authornamehash}{c0d6cbeaba59c67e3078c255d22ea31d}
+      \strng{authorfullhash}{f4576fdd9abae5fdc31153aa357c6fdb}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Accurate identification of bursting activity is an essential element in the characterization of neuronal network activity. Despite this, no one technique for identifying bursts in spike trains has been widely adopted. Instead, many methods have been developed for the analysis of bursting activity, often on an ad hoc basis. Here we provide an unbiased assessment of the effectiveness of eight of these methods at detecting bursts in a range of spike trains. We suggest a list of features that an ideal burst detection technique should possess and use synthetic data to assess each method in regard to these properties. We further employ each of the methods to reanalyze microelectrode array (MEA) recordings from mouse retinal ganglion cells and examine their coherence with bursts detected by a human observer. We show that several common burst detection techniques perform poorly at analyzing spike trains with a variety of properties. We identify four promising burst detection techniques, which are then applied to MEA recordings of networks of human induced pluripotent stem cell-derived neurons and used to describe the ontogeny of bursting activity in these networks over several months of development. We conclude that no current method can provide "perfect" burst detection results across a range of spike trains; however, two burst detection techniques, the MaxInterval and logISI methods, outperform compared with others. We provide recommendations for the robust analysis of bursting activity in experimental recordings using current techniques.}
+      \field{issn}{1522-1598 (Electronic); 0022-3077 (Print); 0022-3077 (Linking)}
+      \field{journaltitle}{Journal of neurophysiology}
+      \field{month}{8}
+      \field{number}{2}
+      \field{title}{A comparison of computational methods for detecting bursts in neuronal spike trains and their application to human stem cell-derived neuronal networks.}
+      \field{volume}{116}
+      \field{year}{2016}
+      \field{pages}{306\bibrangedash 321}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1152/jn.00093.2016
+      \endverb
+      \keyw{bursts; computational methods; development; spike trains; stem cells}
+      \warn{\item article entry 'cotterill2016a' (/Users/campillo/Documents/2-ressources/fab.bib): Invalid format '2016 Aug 1' of date field 'date' - ignoring}
+    \endentry
+    \entry{cotterill2019a}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=f00adce7514f8a8e56258a60ea0114fe}{%
+           family={Cotterill},
+           familyi={C\bibinitperiod},
+           given={Ellese},
+           giveni={E\bibinitperiod}}}%
+        {{hash=1a61e1206748b8ee3598b2b4d3371a91}{%
+           family={Eglen},
+           familyi={E\bibinitperiod},
+           given={Stephen\bibnamedelima J},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=f64f33ae657c819b7bf9097e6e6ea794}{%
+           family={Chiappalone},
+           familyi={C\bibinitperiod},
+           given={Michela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bf91884aa03d0ac582071b133ddbe021}{%
+           family={Pasquale},
+           familyi={P\bibinitperiod},
+           given={Valentina},
+           giveni={V\bibinitperiod}}}%
+        {{hash=118a4b192cc8b638c1b7bf1c5b08e2ea}{%
+           family={Frega},
+           familyi={F\bibinitperiod},
+           given={Monica},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{fullhash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{bibnamehash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{authorbibnamehash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{authornamehash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{authorfullhash}{6c8c825a442bb21813b72c0470a48e82}
+      \strng{editorbibnamehash}{4d6a59b00462371b7d2a538b756e944e}
+      \strng{editornamehash}{4d6a59b00462371b7d2a538b756e944e}
+      \strng{editorfullhash}{4d6a59b00462371b7d2a538b756e944e}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{chiappalone2019a}
+      \field{title}{In Vitro Neuronal Networks From Culturing Methods to Neuro-Technological Applications}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.1007/978-3-030-11135-9
+      \endverb
+    \endentry
+    \entry{davison2009a}{article}{}
+      \name{author}{8}{}{%
+        {{hash=72b1f79a6f35439abb27d2ca5236fb0b}{%
+           family={Davison},
+           familyi={D\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b3af3fc7c51c8bfd8ed2bd68f5d9cffa}{%
+           family={Brüderle},
+           familyi={B\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=cc97391742e2a2382ad5e4b9239e4924}{%
+           family={Eppler},
+           familyi={E\bibinitperiod},
+           given={Jochen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=0a06d06630814ce07f6fe878619851d2}{%
+           family={Kremkow},
+           familyi={K\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=81de766df0616d467f81f4cdcf3dde4e}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Eilif},
+           giveni={E\bibinitperiod}}}%
+        {{hash=fb50c0833a61d88454710cd3fe15e280}{%
+           family={Pecevski},
+           familyi={P\bibinitperiod},
+           given={Dejan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=4fc469dc2cdd5e8cfec575bb8cf4ad14}{%
+           family={Perrinet},
+           familyi={P\bibinitperiod},
+           given={Laurent},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ceebf33d0edf9c8fbb25b47b41cd2b32}{%
+           family={Yger},
+           familyi={Y\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{e7ad5bfb8788debbf0bb18dd460b4084}
+      \strng{fullhash}{6e9ca3d54f03a30235d7f1306a44414b}
+      \strng{bibnamehash}{e7ad5bfb8788debbf0bb18dd460b4084}
+      \strng{authorbibnamehash}{e7ad5bfb8788debbf0bb18dd460b4084}
+      \strng{authornamehash}{e7ad5bfb8788debbf0bb18dd460b4084}
+      \strng{authorfullhash}{6e9ca3d54f03a30235d7f1306a44414b}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Computational neuroscience has produced a diversity of software for simulations of networks of spiking neurons, with both negative and positive consequences. On the one hand, each simulator uses its own programming or configuration language, leading to considerable difficulty in porting models from one simulator to another. This impedes communication between investigators and makes it harder to reproduce and build on the work of others. On the other hand, simulation results can be cross-checked between different simulators, giving greater confidence in their correctness, and each simulator has different optimizations, so the most appropriate simulator can be chosen for a given modelling task. A common programming interface to multiple simulators would reduce or eliminate the problems of simulator diversity while retaining the benefits. PyNN is such an interface, making it possible to write a simulation script once, using the Python programming language, and run it without modification on any supported simulator (currently NEURON, NEST, PCSIM, Brian and the Heidelberg VLSI neuromorphic hardware). PyNN increases the productivity of neuronal network modelling by providing high-level abstraction, by promoting code sharing and reuse, and by providing a foundation for simulator-agnostic analysis, visualization and data-management tools. PyNN increases the reliability of modelling studies by making it much easier to check results on multiple simulators. PyNN is open-source software and is available from http://neuralensemble.org/PyNN.}
+      \field{issn}{1662-5196}
+      \field{journaltitle}{Frontiers in Neuroinformatics}
+      \field{title}{{PyNN}: a common interface for neuronal network simulators}
+      \field{volume}{2}
+      \field{year}{2009}
+      \true{nocite}
+      \field{pages}{11}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/neuro.11.011.2008
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.011.2008
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.011.2008
+      \endverb
+    \endentry
+    \entry{ellis2019b}{article}{}
+      \name{author}{5}{}{%
+        {{hash=6f9804dbdb698a5aa0bfc620718c5f6d}{%
+           family={Ellis},
+           familyi={E\bibinitperiod},
+           given={Cameron\bibnamedelima T.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=14544c90506aa2f3148e195c2237b5b6}{%
+           family={Lesnick},
+           familyi={L\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7b2ce6195ea6f2e1d98779f26cee2f05}{%
+           family={Henselman-Petrusek},
+           familyi={H\bibinithyphendelim P\bibinitperiod},
+           given={Gregory},
+           giveni={G\bibinitperiod}}}%
+        {{hash=eca04c6a34ac6ce1128502a4bee17664}{%
+           family={Keller},
+           familyi={K\bibinitperiod},
+           given={Bryn},
+           giveni={B\bibinitperiod}}}%
+        {{hash=74f9e2bf1a38596826af4f725fec39ed}{%
+           family={Cohen},
+           familyi={C\bibinitperiod},
+           given={Jonathan\bibnamedelima D.},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e4a7f5f01bb8538fd2adb71d3b044bd}
+      \strng{fullhash}{6ac039f95d22f78906626661a5c6c8c5}
+      \strng{bibnamehash}{6ac039f95d22f78906626661a5c6c8c5}
+      \strng{authorbibnamehash}{6ac039f95d22f78906626661a5c6c8c5}
+      \strng{authornamehash}{2e4a7f5f01bb8538fd2adb71d3b044bd}
+      \strng{authorfullhash}{6ac039f95d22f78906626661a5c6c8c5}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{Recent fMRI research shows that perceptual and cognitive representations are instantiated in high-dimensional multivoxel patterns in the brain. However, the methods for detecting these representations are limited. Topological data analysis (TDA) is a new approach, based on the mathematical field of topology, that can detect unique types of geometric features in patterns of data. Several recent studies have successfully applied TDA to study various forms of neural data; however, to our knowledge, TDA has not been successfully applied to data from event-related fMRI designs. Event-related fMRI is very common but limited in terms of the number of events that can be run within a practical time frame and the effect size that can be expected. Here, we investigate whether persistent homology---a popular TDA tool that identifies topological features in data and quantifies their robustness---can identify known signals given these constraints. We use fmrisim, a Python-based simulator of realistic fMRI data, to assess the plausibility of recovering a simple topological representation under a variety of conditions. Our results suggest that persistent homology can be used under certain circumstances to recover topological structure embedded in realistic fMRI data simulations.How do we represent the world? In cognitive neuroscience it is typical to think representations are points in high-dimensional space. In order to study these kinds of spaces it is necessary to have tools that capture the organization of high-dimensional data. Topological data analysis (TDA) holds promise for detecting unique types of geometric features in patterns of data. Although potentially useful, TDA has not been applied to event-related fMRI data. Here we utilized a popular tool from TDA, persistent homology, to recover topological signals from event-related fMRI data. We simulated realistic fMRI data and explored the parameters under which persistent homology can successfully extract signal. We also provided extensive code and recommendations for how to make the most out of TDA for fMRI analysis.} https://github.com/CameronTEllis/event_related_fmri_tda}
+      \field{journaltitle}{Network Neuroscience}
+      \field{number}{3}
+      \field{title}{{Feasibility of topological data analysis for event-related fMRI}}
+      \field{volume}{3}
+      \field{year}{2019}
+      \true{nocite}
+      \field{pages}{695\bibrangedash 706}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1162/netn_a_00095
+      \endverb
+      \verb{urlraw}
+      \verb https://github.com/CameronTEllis/event_related_fmri_tda
+      \endverb
+      \verb{url}
+      \verb https://github.com/CameronTEllis/event_related_fmri_tda
+      \endverb
+    \endentry
+    \entry{eppler2009a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=cc97391742e2a2382ad5e4b9239e4924}{%
+           family={Eppler},
+           familyi={E\bibinitperiod},
+           given={Jochen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=eb14f1985bed361a0e0522291cb6ce38}{%
+           family={Helias},
+           familyi={H\bibinitperiod},
+           given={Moritz},
+           giveni={M\bibinitperiod}}}%
+        {{hash=81de766df0616d467f81f4cdcf3dde4e}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Eilif},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a6e9c8b3b1dc422f6d4f5f42ab3051bc}{%
+           family={Diesmann},
+           familyi={D\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=557d752286e67e546bb733b70b996126}{%
+           family={Gewaltig},
+           familyi={G\bibinitperiod},
+           given={Marc-Oliver},
+           giveni={M\bibinithyphendelim O\bibinitperiod}}}%
+      }
+      \strng{namehash}{2cb075ead75cc551894b2b633d0f5e0d}
+      \strng{fullhash}{cfcdd6d2688f697e8e59e439d4d0b216}
+      \strng{bibnamehash}{cfcdd6d2688f697e8e59e439d4d0b216}
+      \strng{authorbibnamehash}{cfcdd6d2688f697e8e59e439d4d0b216}
+      \strng{authornamehash}{2cb075ead75cc551894b2b633d0f5e0d}
+      \strng{authorfullhash}{cfcdd6d2688f697e8e59e439d4d0b216}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The neural simulation tool NEST (<monospace>http://www.nest-initiative.org</monospace>) is a simulator for heterogeneous networks of point neurons or neurons with a small number of compartments. It aims at simulations of large neural systems with more than 10<sup>4</sup> neurons and 10<sup>7</sup> to 10<sup>9</sup> synapses. NEST is implemented in C++ and can be used on a large range of architectures from single-core laptops over multi-core desktop computers to super-computers with thousands of processor cores. Python (<monospace>http://www.python.org</monospace>) is a modern programming language that has recently received considerable attention in Computational Neuroscience. Python is easy to learn and has many extension modules for scientific computing (e.g. <monospace>http://www.scipy.org</monospace>). In this contribution we describe PyNEST, the new user interface to NEST. PyNEST combines NEST's efficient simulation kernel with the simplicity and flexibility of Python. Compared to NEST's native simulation language SLI, PyNEST makes it easier to set up simulations, generate stimuli, and analyze simulation results. We describe how PyNEST connects NEST and Python and how it is implemented. With a number of examples, we illustrate how it is used.}
+      \field{issn}{1662-5196}
+      \field{journaltitle}{Frontiers in Neuroinformatics}
+      \field{title}{{PyNEST}: a convenient interface to the NEST simulator}
+      \field{volume}{2}
+      \field{year}{2009}
+      \true{nocite}
+      \field{pages}{12}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/neuro.11.012.2008
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.012.2008
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/article/10.3389/neuro.11.012.2008
+      \endverb
+    \endentry
+    \entry{hernandes2024a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=3b841a2ae12a1ebc4e61f5bd04742c49}{%
+           family={Hernandes},
+           familyi={H\bibinitperiod},
+           given={Vinicius},
+           giveni={V\bibinitperiod}}}%
+        {{hash=44669378c0831100c131209a0057baf6}{%
+           family={Heuvelmans},
+           familyi={H\bibinitperiod},
+           given={Anouk\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=fbe8d6a806dad106571a1b582feaff3f}{%
+           family={Gualtieri},
+           familyi={G\bibinitperiod},
+           given={Valentina},
+           giveni={V\bibinitperiod}}}%
+        {{hash=4e5331e78fd10e63d9e3cbb65c9f557a}{%
+           family={Meijer},
+           familyi={M\bibinitperiod},
+           given={Dimphna\bibnamedelima H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=6f1be438ecfbd12d8bb6040ab1c19879}{%
+           family={Woerden},
+           familyi={W\bibinitperiod},
+           given={Geeske\bibnamedelimb M.\bibnamedelimi van},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim v\bibinitperiod}}}%
+        {{hash=d95f123405eba6a3edc2c5dc2e6b614c}{%
+           family={Greplova},
+           familyi={G\bibinitperiod},
+           given={Eliska},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{9e0d8f9818136d49c594eb0fff45b80f}
+      \strng{fullhash}{4257207c0135a937ef0d35fb3b8b5f39}
+      \strng{bibnamehash}{9e0d8f9818136d49c594eb0fff45b80f}
+      \strng{authorbibnamehash}{9e0d8f9818136d49c594eb0fff45b80f}
+      \strng{authornamehash}{9e0d8f9818136d49c594eb0fff45b80f}
+      \strng{authorfullhash}{4257207c0135a937ef0d35fb3b8b5f39}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1662-453X}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{title}{autoMEA: machine learning-based burst detection for multi-electrode array datasets}
+      \field{volume}{18}
+      \field{year}{2024}
+      \verb{doi}
+      \verb 10.3389/fnins.2024.1446578
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1446578
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2024.1446578
+      \endverb
+    \endentry
+    \entry{kapucu2012a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=bf29c6e173fa08a0f440540552694515}{%
+           family={Kapucu},
+           familyi={K\bibinitperiod},
+           given={F\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=36417bc2bf973b6466be5fea5c33b808}{%
+           family={Tanskanen},
+           familyi={T\bibinitperiod},
+           given={J\bibnamedelima M\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6bcf793465af44af2878120e56d31fda}{%
+           family={Mikkonen},
+           familyi={M\bibinitperiod},
+           given={J\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=46f67c41c926998bcdbb8c08a0415c42}{%
+           family={Ylä-Outinen},
+           familyi={Y\bibinithyphendelim O\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod}}}%
+        {{hash=62572910c0db02c70f2dcebcc2293fd1}{%
+           family={Narkilahti},
+           familyi={N\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3a27c5f2aaab61b0dac23229ec27f100}{%
+           family={Hyttinen},
+           familyi={H\bibinitperiod},
+           given={J\bibnamedelima A\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{6e5f5992c3cb451c3e9d25b28220aa83}
+      \strng{fullhash}{81b25613b1fb0c2272d0f409df6cadfd}
+      \strng{bibnamehash}{6e5f5992c3cb451c3e9d25b28220aa83}
+      \strng{authorbibnamehash}{6e5f5992c3cb451c3e9d25b28220aa83}
+      \strng{authornamehash}{6e5f5992c3cb451c3e9d25b28220aa83}
+      \strng{authorfullhash}{81b25613b1fb0c2272d0f409df6cadfd}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Neural Engineering}
+      \field{number}{5}
+      \field{title}{Neuronal network burst detection based on adaptive firing statistics}
+      \field{volume}{9}
+      \field{year}{2012}
+      \field{pages}{056010}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.3389/fncom.2012.00038
+      \endverb
+    \endentry
+    \entry{kapucu2012b}{article}{}
+      \name{author}{6}{}{%
+        {{hash=d4fad6e347d9f1b858b7a0a683407d03}{%
+           family={Kapucu},
+           familyi={K\bibinitperiod},
+           given={Fikret\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=3f6cbdaa3500a4e4310fc5ef68f4e065}{%
+           family={Tanskanen},
+           familyi={T\bibinitperiod},
+           given={Jarno\bibnamedelimb M\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4200754fd24441ac38afc9abf9e292c7}{%
+           family={Mikkonen},
+           familyi={M\bibinitperiod},
+           given={Jarno\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=75379c54f685c574def60998aba0e398}{%
+           family={Ylä-Outinen},
+           familyi={Y\bibinithyphendelim O\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+        {{hash=7f1d932fe572e9fd35ff442b79c5a84c}{%
+           family={Narkilahti},
+           familyi={N\bibinitperiod},
+           given={Susanna},
+           giveni={S\bibinitperiod}}}%
+        {{hash=573e1ae3fd964385f14d12487a4466b9}{%
+           family={Hyttinen},
+           familyi={H\bibinitperiod},
+           given={Jari\bibnamedelimb A\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {Department of Biomedical Engineering, Tampere University of Technology Tampere, Finland.}%
+      }
+      \strng{namehash}{c109c0223ed21cb6286b2f875ab88319}
+      \strng{fullhash}{3848a553154ea2a813a35d4a2ba2edb6}
+      \strng{bibnamehash}{c109c0223ed21cb6286b2f875ab88319}
+      \strng{authorbibnamehash}{c109c0223ed21cb6286b2f875ab88319}
+      \strng{authornamehash}{c109c0223ed21cb6286b2f875ab88319}
+      \strng{authorfullhash}{3848a553154ea2a813a35d4a2ba2edb6}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we propose a firing statistics based neuronal network burst detection algorithm for neuronal networks exhibiting highly variable action potential dynamics. Electrical activity of neuronal networks is generally analyzed by the occurrences of spikes and bursts both in time and space. Commonly accepted analysis tools employ burst detection algorithms based on predefined criteria. However, maturing neuronal networks, such as those originating from human embryonic stem cells (hESCs), exhibit highly variable network structure and time-varying dynamics. To explore the developing burst/spike activities of such networks, we propose a burst detection algorithm which utilizes the firing statistics based on interspike interval (ISI) histograms. Moreover, the algorithm calculates ISI thresholds for burst spikes as well as for pre-burst spikes and burst tails by evaluating the cumulative moving average (CMA) and skewness of the ISI histogram. Because of the adaptive nature of the proposed algorithm, its analysis power is not limited by the type of neuronal cell network at hand. We demonstrate the functionality of our algorithm with two different types of microelectrode array (MEA) data recorded from spontaneously active hESC-derived neuronal cell networks. The same data was also analyzed by two commonly employed burst detection algorithms and the differences in burst detection results are illustrated. The results demonstrate that our method is both adaptive to the firing statistics of the network and yields successful burst detection from the data. In conclusion, the proposed method is a potential tool for analyzing of hESC-derived neuronal cell networks and thus can be utilized in studies aiming to understand the development and functioning of human neuronal networks and as an analysis tool for in vitro drug screening and neurotoxicity assays.}
+      \field{issn}{1662-5188 (Electronic); 1662-5188 (Linking)}
+      \field{journaltitle}{Front Comput Neurosci}
+      \field{title}{Burst analysis tool for developing neuronal networks exhibiting highly varying action potential dynamics.}
+      \field{volume}{6}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \field{pages}{38}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fncom.2012.00038
+      \endverb
+      \keyw{MEA; action potential bursts; burst analysis; developing neuronal networks; hESCs; human embryonic stem cells; microelectrode array; spike trains}
+    \endentry
+    \entry{karvat2022a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=ca78f084553900c55575e2d78aea858f}{%
+           family={Karvat},
+           familyi={K\bibinitperiod},
+           given={Golan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=df21c140c8a67f9e7326a52348fdab04}{%
+           family={Alyahyay},
+           familyi={A\bibinitperiod},
+           given={Mohamad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ced13ff780c5ae79adfd0226bfb3533d}{%
+           family={Diester},
+           familyi={D\bibinitperiod},
+           given={Ilka},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {eLife Sciences Publications Limited}%
+      }
+      \strng{namehash}{4a96a5461ef2c686e36587f045cffff7}
+      \strng{fullhash}{4a96a5461ef2c686e36587f045cffff7}
+      \strng{bibnamehash}{4a96a5461ef2c686e36587f045cffff7}
+      \strng{authorbibnamehash}{4a96a5461ef2c686e36587f045cffff7}
+      \strng{authornamehash}{4a96a5461ef2c686e36587f045cffff7}
+      \strng{authorfullhash}{4a96a5461ef2c686e36587f045cffff7}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{eLife}
+      \field{title}{Real-time detection of narrowband oscillation bursts facilitates closed-loop stimulation of cortical areas in awake rats}
+      \field{volume}{11}
+      \field{year}{2022}
+      \field{pages}{e68148}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb https://doi.org/10.1038/s42003-020-0801-z
+      \endverb
+    \endentry
+    \entry{kass2023a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=f4b02af438fca3cda11ad52753b72293}{%
+           family={Kass},
+           familyi={K\bibinitperiod},
+           given={Robert\bibnamedelima E},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{f4b02af438fca3cda11ad52753b72293}
+      \strng{fullhash}{f4b02af438fca3cda11ad52753b72293}
+      \strng{bibnamehash}{f4b02af438fca3cda11ad52753b72293}
+      \strng{authorbibnamehash}{f4b02af438fca3cda11ad52753b72293}
+      \strng{authornamehash}{f4b02af438fca3cda11ad52753b72293}
+      \strng{authorfullhash}{f4b02af438fca3cda11ad52753b72293}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Carnegie Mellon University}
+      \field{title}{Contributions to Analysis of Neural Spike Train Data}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.stat.cmu.edu/~kass/contrib.html
+      \endverb
+      \verb{url}
+      \verb https://www.stat.cmu.edu/~kass/contrib.html
+      \endverb
+    \endentry
+    \entry{komendantov1996a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3d7a4b91d7ec723cf0d3da84c41197ac}{%
+           family={Komendantov},
+           familyi={K\bibinitperiod},
+           given={A\bibnamedelima O},
+           giveni={A\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=0d806ec83230bdb418f45b06f553977c}{%
+           family={Kononenko},
+           familyi={K\bibinitperiod},
+           given={N\bibnamedelima I},
+           giveni={N\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{3}{%
+        {Department of Mathematical}%
+        {Technical Methods Application in Biology}%
+        {Medicine, V. M. Glushkov Institute of Cybernetics, Kiev, Ukraine.}%
+      }
+      \strng{namehash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \strng{fullhash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \strng{bibnamehash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \strng{authorbibnamehash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \strng{authornamehash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \strng{authorfullhash}{4b16589a81fae9ba0ded4f525ca737f7}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Chaotic regimes in a mathematical model of pacemaker activity in the bursting neurons of a snail Helix pomatia, have been investigated. The model includes a slow-wave generating mechanism, a spike-generating mechanism, an inward Ca current, intracellular Ca ions, [Ca2+]in, their fast buffering and uptake by intracellular Ca stores, and a [Ca2+]in-inhibited Ca current. Chemosensitive voltage-activated conductance, gB*, responsible for termination of the spike burst, and chemosensitive sodium conductance, gNa*, responsible for the depolarization phase of the slow-wave, were used as control parameters. These conductances in intact snail bursting neuron are regulated by neuropeptides. Time courses of the membrane potential and [Ca2+]in were employed to analyse different regimes in the model. Histograms of interspike intervals, autocorrelograms, spectral characteristics, one-dimensional return maps, phase plane trajectories, positive Lyapunov exponent and especially cascades of period-doubling bifurcations demonstrate that approaches to chaos were generated. The bifurcation diagram as a function of gB* and the ([Ca2+]in-V) phase diagram of initial conditions reveal fractal features. It has been observed that a short-lasting depolarizing current of elevation of [Ca2+]in may evoke transformation of chaotic activity into a regular bursting one. These kinds of transitions do not require any changes in the parameters of the model. The results demonstrate that chaotic regimes of neuronal activity modulated by neuropeptides may play a relevant role in information processing and storage at the level of a single neuron.}
+      \field{issn}{0022-5193 (Print); 0022-5193 (Linking)}
+      \field{journaltitle}{Journal of theoretical biology}
+      \field{month}{No}
+      \field{number}{2}
+      \field{title}{Deterministic chaos in mathematical model of pacemaker activity in bursting neurons of snail, Helix pomatia.}
+      \field{volume}{183}
+      \field{year}{1996}
+      \field{pages}{219\bibrangedash 230}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1006/jtbi.1996.0215
+      \endverb
+      \warn{\item article entry 'komendantov1996a' (/Users/campillo/Documents/2-ressources/fab.bib): Invalid format '1996 Nov 21' of date field 'date' - ignoring}
+    \endentry
+    \entry{legendy1985a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1811cdf584402ffe924c2f2ddbecd844}{%
+           family={Legéndy},
+           familyi={L\bibinitperiod},
+           given={C\bibnamedelima R},
+           giveni={C\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=798e6170a40d5c7925af5d00fda19f01}{%
+           family={Salcman},
+           familyi={S\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{32eb4abab3ab312d553218a8a8b6b463}
+      \strng{fullhash}{32eb4abab3ab312d553218a8a8b6b463}
+      \strng{bibnamehash}{32eb4abab3ab312d553218a8a8b6b463}
+      \strng{authorbibnamehash}{32eb4abab3ab312d553218a8a8b6b463}
+      \strng{authornamehash}{32eb4abab3ab312d553218a8a8b6b463}
+      \strng{authorfullhash}{32eb4abab3ab312d553218a8a8b6b463}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0022-3077 (Print); 0022-3077 (Linking)}
+      \field{journaltitle}{Journal of neurophysiology}
+      \field{number}{4}
+      \field{title}{Bursts and recurrences of bursts in the spike trains of spontaneously active striate cortex neurons.}
+      \field{volume}{53}
+      \field{year}{1985}
+      \field{pages}{926\bibrangedash 939}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1152/jn.1985.53.4.926
+      \endverb
+    \endentry
+    \entry{mineault2021a}{book}{}
+      \name{author}{2}{}{%
+        {{hash=82f22121b499749af01af82af296afc6}{%
+           family={Mineault},
+           familyi={M\bibinitperiod},
+           given={Patrick\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b042d787d24fa91b0273df09b7f62472}{%
+           family={{The Good Research Code Handbook Community}},
+           familyi={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Zenodo}%
+      }
+      \strng{namehash}{e6fdea36db73080a23910403712b50d8}
+      \strng{fullhash}{e6fdea36db73080a23910403712b50d8}
+      \strng{bibnamehash}{e6fdea36db73080a23910403712b50d8}
+      \strng{authorbibnamehash}{e6fdea36db73080a23910403712b50d8}
+      \strng{authornamehash}{e6fdea36db73080a23910403712b50d8}
+      \strng{authorfullhash}{e6fdea36db73080a23910403712b50d8}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The Good Research Code Handbook}
+      \field{year}{2021}
+      \verb{doi}
+      \verb 10.5281/zenodo.5796873
+      \endverb
+      \verb{urlraw}
+      \verb https://goodresearch.dev
+      \endverb
+      \verb{url}
+      \verb https://goodresearch.dev
+      \endverb
+    \endentry
+    \entry{mullere2015a}{book}{}
+      \name{editor}{6}{}{%
+        {{hash=81de766df0616d467f81f4cdcf3dde4e}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Eilif},
+           giveni={E\bibinitperiod}}}%
+        {{hash=bcdeb1f7704fff571be778b3d3d4dc3d}{%
+           family={Bednar},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=a6e9c8b3b1dc422f6d4f5f42ab3051bc}{%
+           family={Diesmann},
+           familyi={D\bibinitperiod},
+           given={Markus},
+           giveni={M\bibinitperiod}}}%
+        {{hash=557d752286e67e546bb733b70b996126}{%
+           family={Gewaltig},
+           familyi={G\bibinitperiod},
+           given={Marc-Oliver},
+           giveni={M\bibinithyphendelim O\bibinitperiod}}}%
+        {{hash=937b8a42160384353ea5b4d770fcd419}{%
+           family={Hines},
+           familyi={H\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7666ae5bbbe804619ffc1d64629fb1cc}{%
+           family={Davison},
+           familyi={D\bibinitperiod},
+           given={Andrew\bibnamedelima P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers Media}%
+      }
+      \strng{namehash}{5e0f8e6d9de4a6029a00fb51414bf591}
+      \strng{fullhash}{1f93a7ac56e9396225e029c69085daa6}
+      \strng{bibnamehash}{5e0f8e6d9de4a6029a00fb51414bf591}
+      \strng{editorbibnamehash}{5e0f8e6d9de4a6029a00fb51414bf591}
+      \strng{editornamehash}{5e0f8e6d9de4a6029a00fb51414bf591}
+      \strng{editorfullhash}{1f93a7ac56e9396225e029c69085daa6}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{editor}
+      \field{labeltitlesource}{title}
+      \field{series}{Frontiers Research Topics}
+      \field{title}{Python in Neuroscience}
+      \field{year}{2015}
+      \true{nocite}
+    \endentry
+    \entry{muresan2022a}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=28b75e1b1a60d610901642c088002a88}{%
+           family={Mureșan},
+           familyi={M\bibinitperiod},
+           given={Denisa\bibnamedelima Bianca},
+           giveni={D\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=21182551ee896960ae0bc35c3b6b29a7}{%
+           family={Ciure},
+           familyi={C\bibinitperiod},
+           given={Raluca-Dana},
+           giveni={R\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=222024147c5e467d28c44b248a8941ca}{%
+           family={Ardelean},
+           familyi={A\bibinitperiod},
+           given={Eugen\bibnamedelima Richard},
+           giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=5d85779d18652ae7189286f8411afaaf}{%
+           family={Moca},
+           familyi={M\bibinitperiod},
+           given={Vasile\bibnamedelima Vlad},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=e1aaaf3150748a29d26db5720d25cd77}{%
+           family={Mureșan},
+           familyi={M\bibinitperiod},
+           given={Raul\bibnamedelima Cristian},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=a1b16f50d11bd16438e1c21b7411286f}{%
+           family={Dı̂nș},
+           familyi={D\bibinitperiod},
+           given={Mihaela},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c1ae72a89b865c2b13d7257f9ec959e6}
+      \strng{fullhash}{3c5e3ac252907a6080d4838a02d85a55}
+      \strng{bibnamehash}{c1ae72a89b865c2b13d7257f9ec959e6}
+      \strng{authorbibnamehash}{c1ae72a89b865c2b13d7257f9ec959e6}
+      \strng{authornamehash}{c1ae72a89b865c2b13d7257f9ec959e6}
+      \strng{authorfullhash}{3c5e3ac252907a6080d4838a02d85a55}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2022 IEEE 18th International Conference on Intelligent Computer Communication and Processing (ICCP)}
+      \field{title}{Spike sorting using Superlets: Evaluation of a novel feature space for the discrimination of neuronal spikes}
+      \field{year}{2022}
+      \field{pages}{229\bibrangedash 235}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1109/ICCP56966.2022.10053955
+      \endverb
+      \keyw{Performance evaluation;Time-frequency analysis;Neuroscience;Shape;Superresolution;Transforms;Feature extraction;spike sorting;Superlets Transform;data dimensionality reduction;neural networks}
+    \endentry
+    \entry{nylen2017a}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e7b1484f398c531792b6869bcdf08dda}{%
+           family={Nylen},
+           familyi={N\bibinitperiod},
+           given={Erik\bibnamedelima Lee},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=796ec0d8cb2edfe7d4711b9041cdef70}{%
+           family={Wallisch},
+           familyi={W\bibinitperiod},
+           given={Pascal},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \strng{fullhash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \strng{bibnamehash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \strng{authorbibnamehash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \strng{authornamehash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \strng{authorfullhash}{0a1287a32e6dc3b3843e7d23543ac7f4}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neural Data Science. A Primer with MATLAB and Python}
+      \field{year}{2017}
+      \true{nocite}
+    \endentry
+    \entry{pasquale2010a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=bf91884aa03d0ac582071b133ddbe021}{%
+           family={Pasquale},
+           familyi={P\bibinitperiod},
+           given={Valentina},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9447a90c52056083052ac889539af666}{%
+           family={Massobrio},
+           familyi={M\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=ce1ed2ccc09eee4956c4946dcb3e5287}{%
+           family={Bologna},
+           familyi={B\bibinitperiod},
+           given={L\bibnamedelima Leonardo},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=f64f33ae657c819b7bf9097e6e6ea794}{%
+           family={Chiappalone},
+           familyi={C\bibinitperiod},
+           given={Michela},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b0e92c875e26a95601a710eab39a10ec}{%
+           family={Martinoia},
+           familyi={M\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{b65cc62c911d011c8a74a69aae79e618}
+      \strng{fullhash}{fb364f96535269a183e358779cddeabc}
+      \strng{bibnamehash}{fb364f96535269a183e358779cddeabc}
+      \strng{authorbibnamehash}{fb364f96535269a183e358779cddeabc}
+      \strng{authornamehash}{b65cc62c911d011c8a74a69aae79e618}
+      \strng{authorfullhash}{fb364f96535269a183e358779cddeabc}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Neuroscience}
+      \field{number}{4}
+      \field{title}{Self-organization and neuronal avalanches in networks of dissociated cortical neurons}
+      \field{volume}{153}
+      \field{year}{2010}
+      \field{pages}{1354\bibrangedash 1369}
+      \range{pages}{16}
+    \endentry
+    \entry{rieke1999a}{book}{}
+      \name{author}{4}{}{%
+        {{hash=d3d43b43f2fa17298da018a358c0216a}{%
+           family={Rieke},
+           familyi={R\bibinitperiod},
+           given={Fred},
+           giveni={F\bibinitperiod}}}%
+        {{hash=462e3785a60766e1b4c336bd3926fddf}{%
+           family={Warland},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=523860c2caf27e99628d32e000a52211}{%
+           family={Ruyter\bibnamedelimb van\bibnamedelima Steveninck},
+           familyi={R\bibinitperiod\bibinitdelim v\bibinitperiod\bibinitdelim S\bibinitperiod},
+           given={Rob},
+           giveni={R\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{hash=10a2fcf9b4d2afe92cf7da76b25fc462}{%
+           family={Bialek},
+           familyi={B\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The MIT Press}%
+      }
+      \strng{namehash}{f7d00032d89e3487618cc61c622db2be}
+      \strng{fullhash}{de4301e7d9ed0505a6f31f6dd47d9f2b}
+      \strng{bibnamehash}{de4301e7d9ed0505a6f31f6dd47d9f2b}
+      \strng{authorbibnamehash}{de4301e7d9ed0505a6f31f6dd47d9f2b}
+      \strng{authornamehash}{f7d00032d89e3487618cc61c622db2be}
+      \strng{authorfullhash}{de4301e7d9ed0505a6f31f6dd47d9f2b}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Computational Neuroscience}
+      \field{title}{Spikes: Exploring the Neural Code}
+      \field{year}{1999}
+    \endentry
+    \entry{sauer2016a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f1587ef0a71f484247fe2b32e5cfe014}{%
+           family={Sauer},
+           familyi={S\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8926cdf1134422d661cca224c7a22ebf}{%
+           family={Stannat},
+           familyi={S\bibinitperiod},
+           given={Wilhelm},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {Institut für Mathematik, Technische Universität Berlin, Stra{ß}e des 17, Juni 136, 10623, Berlin, Germany.; Bernstein Center for Computational Neuroscience, Philippstr. 13, 10115, Berlin, Germany.; Institut für Mathematik, Technische Universität Berlin, Stra{ß}e des 17, Juni 136, 10623, Berlin, Germany. stannat@math.tu-berlin.de.; Bernstein Center for Computational Neuroscience, Philippstr. 13, 10115, Berlin, Germany. stannat@math.tu-berlin.de.}%
+      }
+      \strng{namehash}{fbe6155731c6281d7579a8e607bd7f75}
+      \strng{fullhash}{fbe6155731c6281d7579a8e607bd7f75}
+      \strng{bibnamehash}{fbe6155731c6281d7579a8e607bd7f75}
+      \strng{authorbibnamehash}{fbe6155731c6281d7579a8e607bd7f75}
+      \strng{authornamehash}{fbe6155731c6281d7579a8e607bd7f75}
+      \strng{authorfullhash}{fbe6155731c6281d7579a8e607bd7f75}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We introduce a method for computing probabilities for spontaneous activity and propagation failure of the action potential in spatially extended, conductance-based neuronal models subject to noise, based on statistical properties of the membrane potential. We compare different estimators with respect to the quality of detection, computational costs and robustness and propose the integral of the membrane potential along the axon as an appropriate estimator to detect both spontaneous activity and propagation failure. Performing a model reduction we achieve a simplified analytical expression based on the linearization at the resting potential (resp. the traveling action potential). This allows to approximate the probabilities for spontaneous activity and propagation failure in terms of (classical) hitting probabilities of one-dimensional linear stochastic differential equations. The quality of the approximation with respect to the noise amplitude is discussed and illustrated with numerical results for the spatially extended Hodgkin-Huxley equations. Python simulation code is supplied on GitHub under the link https://github.com/deristnochda/Hodgkin-Huxley-SPDE.}
+      \field{annotation}{``computing probabilities for spontaneous activity and propagation failure of the action potential in spatially extended, conductance-based neuronal models subject to noise {\ldots} Performing a model reduction we achieve a simplified analytical expression based on the linearization at the resting potential (resp. the traveling action potential). This allows to approximate the probabilities for spontaneous activity and propagation failure in terms of (classical) hitting probabilities of one-dimensional linear SDE {\ldots} spatially extended Hodgkin- Huxley equations. Python simulation code is supplied on GitHub under the \href{https://github.com/deristnochda/ Hodgkin-Huxley-SPDE}{link}.''}
+      \field{issn}{1573-6873 (Electronic); 0929-5313 (Linking)}
+      \field{journaltitle}{Journal of computational neuroscience}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Reliability of signal transmission in stochastic nerve axon equations.}
+      \field{volume}{40}
+      \field{year}{2016}
+      \true{nocite}
+      \field{pages}{103\bibrangedash 111}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/s10827-015-0586-0
+      \endverb
+      \keyw{Hodgkin-Huxley equations; Stochastic spatial model neuron}
+      \warn{\item article entry 'sauer2016a' (/Users/campillo/Documents/2-ressources/fab.bib): Invalid format '2016 Feb' of date field 'date' - ignoring}
+    \endentry
+    \entry{seedat2020a}{article}{}
+      \name{author}{12}{}{%
+        {{hash=f2f502a1dafde35f2a4dc4725d0f4935}{%
+           family={Seedat},
+           familyi={S\bibinitperiod},
+           given={Zainab\bibnamedelima A},
+           giveni={Z\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=d72886f1b986d6509e5e37ab34503470}{%
+           family={Quinn},
+           familyi={Q\bibinitperiod},
+           given={Andrew\bibnamedelima J},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=e99c7571f718ef616c5843232e59e847}{%
+           family={Vidaurre},
+           familyi={V\bibinitperiod},
+           given={Diego},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d181f40da44be08062f5ebd7dd64dd34}{%
+           family={Liuzzi},
+           familyi={L\bibinitperiod},
+           given={Lucrezia},
+           giveni={L\bibinitperiod}}}%
+        {{hash=21350aad15d9713d2b7f4f84300b8840}{%
+           family={Gascoyne},
+           familyi={G\bibinitperiod},
+           given={Lauren\bibnamedelima E},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=55606572398d5e8bd46379ba996518bc}{%
+           family={Hunt},
+           familyi={H\bibinitperiod},
+           given={Benjamin\bibnamedelimb A\bibnamedelima E},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=c37c8db331cbf1b45e19285edafda55a}{%
+           family={O'Neill},
+           familyi={O\bibinitperiod},
+           given={George\bibnamedelima C},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=d1a827c7fc313866facdc507eb238739}{%
+           family={Pakenham},
+           familyi={P\bibinitperiod},
+           given={Daisie\bibnamedelima O},
+           giveni={D\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=368a0e216caa13d12a93693330465f07}{%
+           family={Mullinger},
+           familyi={M\bibinitperiod},
+           given={Karen\bibnamedelima J},
+           giveni={K\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=52ef69cb9ea1a5ce6a30bb8cd5725314}{%
+           family={Morris},
+           familyi={M\bibinitperiod},
+           given={Peter\bibnamedelima G},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=57654ae9231add44292c54a4d8c1b1cb}{%
+           family={Woolrich},
+           familyi={W\bibinitperiod},
+           given={Mark\bibnamedelima W},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=b4063a0056c03ad5b157a8ec3ba37422}{%
+           family={Brookes},
+           familyi={B\bibinitperiod},
+           given={Matthew\bibnamedelima J},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{5b24ca9c5aade33a97927a97b7fb394f}
+      \strng{fullhash}{e102a878c192e12caa6521aa87281540}
+      \strng{bibnamehash}{5b24ca9c5aade33a97927a97b7fb394f}
+      \strng{authorbibnamehash}{5b24ca9c5aade33a97927a97b7fb394f}
+      \strng{authornamehash}{5b24ca9c5aade33a97927a97b7fb394f}
+      \strng{authorfullhash}{e102a878c192e12caa6521aa87281540}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{NeuroImage}
+      \field{title}{Detecting transient bursts in neuronal populations}
+      \field{volume}{206}
+      \field{year}{2020}
+      \field{pages}{116333}
+      \range{pages}{1}
+    \endentry
+    \entry{selinger2007a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=789f1e48c62314461bb56b33097b9828}{%
+           family={Selinger},
+           familyi={S\bibinitperiod},
+           given={Jessica\bibnamedelima V},
+           giveni={J\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=35553c1e17603ea20b2e833e6154a073}{%
+           family={Kulagina},
+           familyi={K\bibinitperiod},
+           given={Nadezhda\bibnamedelima V},
+           giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=288b5294a21736242c64e7ef065f680b}{%
+           family={O'Shaughnessy},
+           familyi={O\bibinitperiod},
+           given={Thomas\bibnamedelima J},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=651cf62dba5700dc81753f918384cb69}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Wu},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d59ace3b78a89b04e5143d1529b0e537}{%
+           family={Pancrazio},
+           familyi={P\bibinitperiod},
+           given={Joseph\bibnamedelima J},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{cf2b6a794aa262a727ec66b408969495}
+      \strng{fullhash}{5750bf0b78fe8e4a6e36eb4f166454a4}
+      \strng{bibnamehash}{5750bf0b78fe8e4a6e36eb4f166454a4}
+      \strng{authorbibnamehash}{5750bf0b78fe8e4a6e36eb4f166454a4}
+      \strng{authornamehash}{cf2b6a794aa262a727ec66b408969495}
+      \strng{authorfullhash}{5750bf0b78fe8e4a6e36eb4f166454a4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Frontiers in Neuroscience}
+      \field{title}{Finding and using neuronal rhythms}
+      \field{volume}{1}
+      \field{year}{2007}
+      \field{pages}{213\bibrangedash 222}
+      \range{pages}{10}
+    \endentry
+    \entry{tam2002a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=57057ed952a1da6fc6288f491ef13e93}{%
+           family={Tam},
+           familyi={T\bibinitperiod},
+           given={David\bibnamedelima C},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{57057ed952a1da6fc6288f491ef13e93}
+      \strng{fullhash}{57057ed952a1da6fc6288f491ef13e93}
+      \strng{bibnamehash}{57057ed952a1da6fc6288f491ef13e93}
+      \strng{authorbibnamehash}{57057ed952a1da6fc6288f491ef13e93}
+      \strng{authornamehash}{57057ed952a1da6fc6288f491ef13e93}
+      \strng{authorfullhash}{57057ed952a1da6fc6288f491ef13e93}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Neuroscience Methods}
+      \field{number}{1}
+      \field{title}{Detection of bursts in extracellular spike trains using hidden semi-Markov point process models}
+      \field{volume}{122}
+      \field{year}{2002}
+      \field{pages}{45\bibrangedash 67}
+      \range{pages}{23}
+    \endentry
+    \entry{valkki2017a}{article}{}
+      \name{author}{5}{}{%
+        {{hash=80bd4264092f36742637047fe238c84c}{%
+           family={Välkki},
+           familyi={V\bibinitperiod},
+           given={Inkeri\bibnamedelima A},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=5dd36135864378a3b1ecd3a02f003d38}{%
+           family={Lenk},
+           familyi={L\bibinitperiod},
+           given={Kerstin},
+           giveni={K\bibinitperiod}}}%
+        {{hash=4200754fd24441ac38afc9abf9e292c7}{%
+           family={Mikkonen},
+           familyi={M\bibinitperiod},
+           given={Jarno\bibnamedelima E},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=d4fad6e347d9f1b858b7a0a683407d03}{%
+           family={Kapucu},
+           familyi={K\bibinitperiod},
+           given={Fikret\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=573e1ae3fd964385f14d12487a4466b9}{%
+           family={Hyttinen},
+           familyi={H\bibinitperiod},
+           given={Jari\bibnamedelimb A\bibnamedelima K},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{11}{%
+        {BioMediTech Institute}%
+        {Faculty of Biomedical Sciences}%
+        {Engineering, Tampere University of TechnologyTampere, Finland.; BioMediTech Institute}%
+        {Faculty of Biomedical Sciences}%
+        {Engineering, Tampere University of TechnologyTampere, Finland.; Department of Computer Science}%
+        {Information Systems, University of JyväskyläJyväskylä, Finland.; BioMediTech Institute}%
+        {Faculty of Biomedical Sciences}%
+        {Engineering, Tampere University of TechnologyTampere, Finland.; Pervasive Computing, Faculty of Computing}%
+        {Electrical Engineering, Tampere University of TechnologyTampere, Finland.; BioMediTech Institute}%
+        {Faculty of Biomedical Sciences}%
+        {Engineering, Tampere University of TechnologyTampere, Finland.}%
+      }
+      \strng{namehash}{9af71f52e8f190a9bba6f133b95386ed}
+      \strng{fullhash}{6e4405698b1a956f54c971a2c581f94b}
+      \strng{bibnamehash}{6e4405698b1a956f54c971a2c581f94b}
+      \strng{authorbibnamehash}{6e4405698b1a956f54c971a2c581f94b}
+      \strng{authornamehash}{9af71f52e8f190a9bba6f133b95386ed}
+      \strng{authorfullhash}{6e4405698b1a956f54c971a2c581f94b}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neuronal networks are often characterized by their spiking and bursting statistics. Previously, we introduced an adaptive burst analysis method which enhances the analysis power for neuronal networks with highly varying firing dynamics. The adaptation is based on single channels analyzing each element of a network separately. Such kind of analysis was adequate for the assessment of local behavior, where the analysis focuses on the neuronal activity in the vicinity of a single electrode. However, the assessment of the whole network may be hampered, if parts of the network are analyzed using different rules. Here, we test how using multiple channels and measurement time points affect adaptive burst detection. The main emphasis is, if network-wide adaptive burst detection can provide new insights into the assessment of network activity. Therefore, we propose a modification to the previously introduced inter-spike interval (ISI) histogram based cumulative moving average (CMA) algorithm to analyze multiple spike trains simultaneously. The network size can be freely defined, e.g., to include all the electrodes in a microelectrode array (MEA) recording. Additionally, the method can be applied on a series of measurements on the same network to pool the data for statistical analysis. Firstly, we apply both the original CMA-algorithm and our proposed network-wide CMA-algorithm on artificial spike trains to investigate how the modification changes the burst detection. Thereafter, we use the algorithms on MEA data of spontaneously active chemically manipulated in vitro rat cortical networks. Moreover, we compare the synchrony of the detected bursts introducing a new burst synchrony measure. Finally, we demonstrate how the bursting statistics can be used to classify networks by applying k-means clustering to the bursting statistics. The results show that the proposed network wide adaptive burst detection provides a method to unify the burst definition in the whole network and thus improves the assessment and classification of the neuronal activity, e.g., the effects of different pharmaceuticals. The results indicate that the novel method is adaptive enough to be usable on networks with different dynamics, and it is especially feasible when comparing the behavior of differently spiking networks, for example in developing networks.}
+      \field{issn}{1662-5188 (Print); 1662-5188 (Electronic); 1662-5188 (Linking)}
+      \field{journaltitle}{Front Comput Neurosci}
+      \field{title}{Network-Wide Adaptive Burst Detection Depicts Neuronal Activity with Improved Accuracy.}
+      \field{volume}{11}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{40}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3389/fncom.2017.00040
+      \endverb
+      \keyw{burst detection; burst synchrony; microelectrode arrays; network classification; neuronal networks}
+    \endentry
+    \entry{van_geit2016a}{article}{}
+      \name{author}{9}{}{%
+        {{hash=8d986772ace853a94ce9994cd693ebbb}{%
+           family={Van\bibnamedelima Geit},
+           familyi={V\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod}}}%
+        {{hash=7948031491bc657dde11bf93ed469667}{%
+           family={Gevaert},
+           familyi={G\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3003cc609cbfff14cdf0196761f25eb3}{%
+           family={Chindemi},
+           familyi={C\bibinitperiod},
+           given={Giuseppe},
+           giveni={G\bibinitperiod}}}%
+        {{hash=0d0c45487287135e8eaf01bf55f6eb8e}{%
+           family={Rössert},
+           familyi={R\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d1e37dbd3241047cbd0dc6ce8d109d53}{%
+           family={Courcol},
+           familyi={C\bibinitperiod},
+           given={Jean-Denis},
+           giveni={J\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=2a8984c1ae2fd4ba6ee41c81e30d8c39}{%
+           family={Muller},
+           familyi={M\bibinitperiod},
+           given={Eilif\bibnamedelima B.},
+           giveni={E\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=0504da377be524702202b453a77085ce}{%
+           family={Schürmann},
+           familyi={S\bibinitperiod},
+           given={Felix},
+           giveni={F\bibinitperiod}}}%
+        {{hash=531e711b7561c6e10ec60118f4fcef82}{%
+           family={Segev},
+           familyi={S\bibinitperiod},
+           given={Idan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=96734e7ca80390b8caf8dcebb3d0a5ac}{%
+           family={Markram},
+           familyi={M\bibinitperiod},
+           given={Henry},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{cfaf3329f21ca7352fa42541192b7b41}
+      \strng{fullhash}{c32713cb018f083061f2ced68a0cc225}
+      \strng{bibnamehash}{cfaf3329f21ca7352fa42541192b7b41}
+      \strng{authorbibnamehash}{cfaf3329f21ca7352fa42541192b7b41}
+      \strng{authornamehash}{cfaf3329f21ca7352fa42541192b7b41}
+      \strng{authorfullhash}{c32713cb018f083061f2ced68a0cc225}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{At many scales in neuroscience, appropriate mathematical models take the form of complex dynamical systems. Parameterizing such models to conform to the multitude of available experimental constraints is a global non-linear optimisation problem with a complex fitness landscape, requiring numerical techniques to find suitable approximate solutions. Stochastic optimisation approaches, such as evolutionary algorithms, have been shown to be effective, but often the setting up of such optimisations and the choice of a specific search algorithm and its parameters is non-trivial, requiring domain-specific expertise. Here we describe BluePyOpt, a Python package targeted at the broad neuroscience community to simplify this task. BluePyOpt is an extensible framework for data-driven model parameter optimisation that wraps and standardizes several existing open-source tools. It simplifies the task of creating and sharing these optimisations, and the associated techniques and knowledge. This is achieved by abstracting the optimisation and evaluation tasks into various reusable and flexible discrete elements according to established best-practices. Further, BluePyOpt provides methods for setting up both small- and large-scale optimisations on a variety of platforms, ranging from laptops to Linux clusters and cloud-based compute infrastructures. The versatility of the BluePyOpt framework is demonstrated by working through three representative neuroscience specific use cases.}
+      \field{annotation}{``At many scales in neuroscience, appropriate mathematical models take the form of complex dynamical systems. Parameterizing such models to conform to the multitude of available experimental constraints is a global non-linear optimisation problem with a complex fitness landscape, requiring numerical techniques to find suitable approximate solutions [{\ldots}] BluePyOpt, a Python package targeted at the broad neuroscience community to simplify this task.}
+      \field{journaltitle}{Frontiers in Neuroinformatics}
+      \field{title}{{BluePyOpt}: leveraging open source software and cloud infrastructure to optimise model parameters in neuroscience}
+      \field{volume}{10}
+      \field{year}{2016}
+      \true{nocite}
+      \verb{doi}
+      \verb 10.3389/fninf.2016.00017
+      \endverb
+      \keyw{python}
+    \endentry
+    \entry{viejo2023a}{article}{}
+      \name{author}{10}{}{%
+        {{hash=2ca18338cd68eef3bffb3dfee1335380}{%
+           family={Viejo},
+           familyi={V\bibinitperiod},
+           given={Guillaume},
+           giveni={G\bibinitperiod}}}%
+        {{hash=99c6083054699160b781f9fbd49fb20d}{%
+           family={Levenstein},
+           familyi={L\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7c8284fed90227d70b62f3fc248a5f31}{%
+           family={Skromne\bibnamedelima Carrasco},
+           familyi={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Sofia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=085ceae373b4e13e47ef63d0df40e336}{%
+           family={Mehrotra},
+           familyi={M\bibinitperiod},
+           given={Dhruv},
+           giveni={D\bibinitperiod}}}%
+        {{hash=93aeaf562f8b8bdb2de92d6f2b64618c}{%
+           family={Mahallati},
+           familyi={M\bibinitperiod},
+           given={Sara},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7c6b6c6c060bc6e3b75d8165255a082e}{%
+           family={Vite},
+           familyi={V\bibinitperiod},
+           given={Gilberto\bibnamedelima R},
+           giveni={G\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b5f4c022da0bcde82467cb16219a4fd9}{%
+           family={Denny},
+           familyi={D\bibinitperiod},
+           given={Henry},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d4074840ee9708db2c1e0bbda57f1385}{%
+           family={Sjulson},
+           familyi={S\bibinitperiod},
+           given={Lucas},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8f7f3461805cb3e1929131464ab2e3f6}{%
+           family={Battaglia},
+           familyi={B\bibinitperiod},
+           given={Francesco\bibnamedelima P},
+           giveni={F\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=1016cec413c17367e08a5b9d93633365}{%
+           family={Peyrache},
+           familyi={P\bibinitperiod},
+           given={Adrien},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {eLife Sciences Publications, Ltd}%
+      }
+      \strng{namehash}{950785864c5742233af51f95953422d1}
+      \strng{fullhash}{7bd0092d971405d814522fb5d16121ac}
+      \strng{bibnamehash}{950785864c5742233af51f95953422d1}
+      \strng{authorbibnamehash}{950785864c5742233af51f95953422d1}
+      \strng{authornamehash}{950785864c5742233af51f95953422d1}
+      \strng{authorfullhash}{7bd0092d971405d814522fb5d16121ac}
+      \field{sortinit}{V}
+      \field{sortinithash}{afb52128e5b4dc4b843768c0113d673b}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Datasets collected in neuroscientific studies are of ever-growing complexity, often combining high-dimensional time series data from multiple data acquisition modalities. Handling and manipulating these various data streams in an adequate programming environment is crucial to ensure reliable analysis, and to facilitate sharing of reproducible analysis pipelines. Here, we present Pynapple, the PYthon Neural Analysis Package, a lightweight python package designed to process a broad range of time-resolved data in systems neuroscience. The core feature of this package is a small number of versatile objects that support the manipulation of any data streams and task parameters. The package includes a set of methods to read common data formats and allows users to easily write their own. The resulting code is easy to read and write, avoids low-level data processing and other error-prone steps, and is open source. Libraries for higher-level analyses are developed within the Pynapple framework but are contained within a collaborative repository of specialized and continuously updated analysis routines. This provides flexibility while ensuring long-term stability of the core package. In conclusion, Pynapple provides a common framework for data analysis in neuroscience.}
+      \field{issn}{2050-084X}
+      \field{journaltitle}{eLife}
+      \field{title}{Pynapple, a toolbox for data analysis in neuroscience}
+      \field{volume}{12}
+      \field{year}{2023}
+      \true{nocite}
+      \field{pages}{RP85786}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.7554/eLife.85786
+      \endverb
+      \keyw{data analysis,systems neuroscience,software package}
+    \endentry
+    \entry{wilson2002a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=55f1518c53bbd199a0348888b30d1286}{%
+           family={Wilson},
+           familyi={W\bibinitperiod},
+           given={Scott\bibnamedelima B},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=d731f3efe6cf4389edf63455e538edbb}{%
+           family={Emerson},
+           familyi={E\bibinitperiod},
+           given={Ronald},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{location}{1}{%
+        {Persyst Development Corporation, Prescott, AZ 86305, USA. scottw{@}eeg-persyst.com}%
+      }
+      \strng{namehash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \strng{fullhash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \strng{bibnamehash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \strng{authorbibnamehash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \strng{authornamehash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \strng{authorfullhash}{e1687ac87d77d6eb0738d3645dbb6b7f}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{For algorithm developers, this review details recent approaches to the problem, compares the accuracy of various algorithms, identifies common testing issues and proposes some solutions. For the algorithm user, e.g. electroencephalograph (EEG) technician or neurologist, this review provides an estimate of algorithm accuracy and comparison to that of human experts. Manuscripts dated from 1975 are reviewed. Progress since Frost's 1985 review of the state of the art is discussed. Twenty-five manuscripts are reviewed. Many novel methods have been proposed including neural networks and high-resolution frequency methods. Algorithm accuracy is less than that of experts, but the accuracy of experts is probably less than what is commonly believed. Larger record sets will be required for expert-level detection algorithms.}
+      \field{issn}{1388-2457 (Print); 1388-2457 (Linking)}
+      \field{journaltitle}{Clin Neurophysiol}
+      \field{number}{12}
+      \field{title}{Spike detection: a review and comparison of algorithms.}
+      \field{volume}{113}
+      \field{year}{2002}
+      \field{pages}{1873\bibrangedash 1881}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/s1388-2457(02)00297-3
+      \endverb
+      \warn{\item article entry 'wilson2002a' (/Users/campillo/Documents/2-ressources/fab.bib): Invalid format '2002 Dec' of date field 'date' - ignoring}
+    \endentry
+    \entry{wu_jiannis2019a}{article}{}
+      \name{author}{6}{}{%
+        {{hash=590bf67c5003f183073f0670e0a4d6ad}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Jiannis},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6b37b94d46fb909d8191bb88d78e31ce}{%
+           family={Phillips},
+           familyi={P\bibinitperiod},
+           given={David\bibnamedelima J},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=4b7a8e75f0b677858a054c6806da808b}{%
+           family={Hellyer},
+           familyi={H\bibinitperiod},
+           given={Peter\bibnamedelima J},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c5b6ca45dd5aec34cb08c07a2a2f0b65}{%
+           family={Leech},
+           familyi={L\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9db3db5dee33320895ba783b2200487f}{%
+           family={Turkheimer},
+           familyi={T\bibinitperiod},
+           given={Federico\bibnamedelima E},
+           giveni={F\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=4d9a6d292e4e4917417ead82b5b74d72}{%
+           family={Sharp},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima J},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{e6ec5db73f9ce95ec1e04e55aca1aa4a}
+      \strng{fullhash}{fdaa8a41bd1dc23334c5cb4d617722df}
+      \strng{bibnamehash}{e6ec5db73f9ce95ec1e04e55aca1aa4a}
+      \strng{authorbibnamehash}{e6ec5db73f9ce95ec1e04e55aca1aa4a}
+      \strng{authornamehash}{e6ec5db73f9ce95ec1e04e55aca1aa4a}
+      \strng{authorfullhash}{fdaa8a41bd1dc23334c5cb4d617722df}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific Reports}
+      \field{number}{1}
+      \field{title}{A normalized template matching method for improving spike detection in extracellular voltage recordings}
+      \field{volume}{9}
+      \field{year}{2019}
+      \field{pages}{12087}
+      \range{pages}{1}
+    \endentry
+  \enddatalist
+  \missing{mathy2009a}
+  \missing{mueller2023ia}
+\endrefsection
+\endinput
+

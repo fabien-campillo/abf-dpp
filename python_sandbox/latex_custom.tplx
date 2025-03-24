@@ -1,0 +1,7 @@
+((*- extends 'article.tplx' -*))
+((* block docclass *))
+\documentclass{article}
+\newcommand{\rmd}{\textrm{d}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\eps}{\varepsilon}  % Add your custom LaTeX command here
+((* endblock docclass *))

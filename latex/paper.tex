@@ -1,0 +1,2732 @@
+%% !TEX TS–program = pdflatexmk
+% !BIB program = biber
+\documentclass[a4paper,9pt]{extarticle}
+
+
+% --- 3 booléens (cf. infra)
+%	showDontforget
+%	showProofs
+%	showComments
+
+\usepackage{comment}
+%\excludecomment{sandbox} % with the comment package	
+%\includecomment{sandbox}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  PREAMBULE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\DeclareUnicodeCharacter{0302}{î}
+
+%--- packages
+
+\usepackage[%
+  hidelinks, 
+  bookmarks, 
+  linkcolor  = Fblue1,
+  citecolor  = Fblue1,
+  filecolor  = Fblue1,
+  urlcolor   = Fblue1,
+  colorlinks = true, 
+  pdftitle   = {Markov models and succession in ecology}, 
+  pdfauthor  = {Fabien Campillo}
+]{hyperref}             % Producing hyperlinked PDF
+%\usepackage{memhfixc}   % because of hyperref package 
+
+\usepackage{multicol}
+%\usepackage{etoolbox}
+%
+%\makeatletter
+%\patchcmd\multi@column@out
+%{\process@cols}
+%{%
+%  \typeout{Requested vsize = \the\dimen@ }%
+%   \advance\dimen@ -\topskip
+%   \divide\dimen@ \baselineskip
+%   \multiply\dimen@ \baselineskip
+%   \advance\dimen@ \topskip
+%   \typeout{Reducing vsize to integral number of lines = \the\dimen@ }%
+%   \process@cols}
+%{\typeout{Success!}}{\ERROR}
+%\makeatother 
+
+
+\usepackage[french]{babel}  % Typographie française
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{combelow}
+
+
+\usepackage{newunicodechar}
+\newunicodechar{î}{{\^{\i}}}
+
+\usepackage{float}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{latexsym}
+\usepackage{wrapfig}
+\usepackage{wasysym}
+\usepackage{lipsum}  % fake text 
+  \usepackage{lmodern}  
+
+\usepackage[plain]{algorithm}
+\usepackage{algorithmic}
+
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+\usepackage{makecell}
+\usepackage{makeidx}
+\makeindex
+\usepackage[columns=2,%
+            totoc=true,%
+            justific=raggedright,%
+            %rule=0.5pt%
+            ]{idxlayout}
+%\usepackage{flushend}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{pbalance} % to use with \balance
+\usepackage{url}
+\usepackage{graphicx} % Insertion de figures
+\usepackage{fancybox,exscale,rotate,epsfig}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{fontawesome5}
+\usepackage{letterspace}
+\usepackage{supertabular}
+%\usepackage{longtable} % tableau sur plusieurs pages
+\usepackage{rotating}
+\usepackage{enumitem} % pour changer les itemize etc
+	\setlist{leftmargin=0.4cm}
+\usepackage{tocloft}
+\usepackage{setspace}   % produces double and one-and-one-half line 
+	                    % spacing based on the point size in use
+\usepackage{framed}
+
+\usepackage{upquote,textcomp}  % pour textquotesingle
+%\makeatletter
+%\let \@sverbatim \@verbatim
+%\def \@verbatim {\@sverbatim \verbatimplus}
+%{\catcode`'=13 \gdef \verbatimplus{\catcode`'=13 \chardef '=13 }} 
+%\makeatother
+
+\usepackage{cprotect}
+% pour avoir des accents dans les URL, il faut bosser:
+% 	http://www.utf8-chartable.de
+% 	 é \%c3\%a9
+% 	 è \%c3\%a8
+
+\DeclareGraphicsRule{.pdftex}{pdf}{*}{}
+\usepackage{epsfig}
+\usepackage{calc}      % Outils de calcul
+\usepackage{ifthen}    % Tests if/then/else
+
+
+
+
+%/////////////////////////////////////////////////////////////////////
+%  LES COULEURS
+%/////////////////////////////////////////////////////////////////////
+%https://en.wikibooks.org/wiki/LaTeX/Colors
+%http://latexcolor.com
+
+\usepackage{colortbl}
+
+\usepackage[table,xcdraw,dvipsnames]{xcolor}
+%\usepackage{sectsty}
+\usepackage{titlesec} %modifies the format of section,subsection,subsubsection
+%\titlelabel{\textcolor{red}\thetitle\quad}
+%\sectionfont{\color{Fasphalt1}}  % sets colour of sections
+%\subsectionfont{\color{Fasphalt1}}  % sets colour of sections
+
+
+
+
+% --- changement du style des titres des sections et sous-sections
+\titleformat{\section}[hang]
+   {\Large\bfseries\flushleft\color{SecColor}}
+   {\thesection\ }
+   {0pt}
+   {\Large\bfseries\vspace{-1em}}
+\titleformat{\subsection}[hang]
+   {\large\bfseries\flushleft\color{SecColor}}
+   {\thesubsection\ }
+   {0pt}
+   {\large\bfseries}
+\titleformat{\subsubsection}[hang]
+   {\itshape\flushleft\color{SecColor}}
+   {}
+   {0pt}
+   {\itshape\vspace{-0.5em}}
+%\titleformat{\subsection}[hang]{\large\bfseries\flushleft}{\thesubsection\ }{0pt}{\large\bfseries}
+% --- changement du style des titres des sections et sous-sections
+%\titleformat{\section}[hang]{\Large\bfseries\flushleft}{\thesection\ }{0pt}{\Large\bfseries}
+%\titleformat{\subsection}[hang]{\large\bfseries\flushleft}{\thesubsection\ }{0pt}{\large\bfseries}
+
+
+\usepackage{colortbl}
+
+\definecolor{PA1}{HTML}{E20416}
+\definecolor{PA2}{HTML}{F1BE08}
+\definecolor{PA3}{HTML}{63D03A}
+\definecolor{PA4}{HTML}{C903B5}
+\definecolor{PA5}{HTML}{3EBDDC}
+
+% http://flatuicolors.com
+\definecolor{Fblue1}{HTML}{3498db}
+\definecolor{Fblue2}{HTML}{2980b9}
+\definecolor{Fred1}{HTML}{e74c3c}
+\definecolor{Fred2}{HTML}{c0392b}
+\definecolor{Fgreen1}{HTML}{1abc9c}
+\definecolor{Fgreen2}{HTML}{16a085}
+\definecolor{Fgrey1}{HTML}{95a5a6}
+%\definecolor{Fgrey2}{HTML}{7f8c8d}
+\definecolor{Fasphalt1}{HTML}{34495e}
+\definecolor{Fasphalt2}{HTML}{2c3e50}
+
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
+
+\usepackage{tikz}
+	\definecolor{carmine}{rgb}{0.59, 0.0, 0.09}
+	\definecolor{cadmiumred}{rgb}{0.89, 0.0, 0.13}
+	\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
+	\definecolor{blush}{rgb}{0.87, 0.36, 0.51}
+	\definecolor{cadetblue}{rgb}{0.37, 0.62, 0.63}
+	\definecolor{crimson}{rgb}{0.86, 0.08, 0.24}
+	\definecolor{lightgray}{rgb}{.9,.9,.9}
+	\definecolor{darkgray}{rgb}{.4,.4,.4}
+	\definecolor{arsenic}{rgb}{0.23, 0.27, 0.29}
+	\definecolor{cinnabar}{rgb}{0.89, 0.26, 0.2}
+	\colorlet{ColorImmuable}{Orange}
+	\colorlet{ColorMutable}{RubineRed}
+	\colorlet{ColorCommandePython}{BrickRed}
+	\colorlet{ColorCommandePythonIn}{Black!60}
+	\colorlet{ColorCommandePythonOut}{Black!30}
+	\definecolor{ColorCommandePythonCom}{rgb}{0.5,0.5,0.5}
+	\colorlet{ColorLienInterne}{ForestGreen}
+	\colorlet{ColorLienExterne}{NavyBlue}
+	\colorlet{ColorCite}{cadetblue}
+	\colorlet{ColorAnnotation}{carmine!60}
+    \colorlet{SecColor}{carmine}
+\usetikzlibrary{automata, positioning,shapes,math,tikzmark,hobby}
+\tikzset{>=stealth}
+
+
+
+% cl = sns.color_palette('deep', 8)
+% print(cl.as_hex())
+% ['#4c72b0', '#dd8452', '#55a868', '#c44e52', '#8172b3', 
+%  '#937860', '#da8bc3', '#8ce}{HTML}{dd8452}
+\definecolor{fGreen} {HTML}{55a868}
+\definecolor{fRed}   {HTML}{c44e52}
+\definecolor{fPurple}{HTML}{8172b3}
+\definecolor{fBrown} {HTML}{937860}
+\definecolor{fPink}  {HTML}{da8bc3}
+\definecolor{fTile}  {HTML}{8c8c8c}
+
+
+
+\colorlet{f1}{cadmiumred}
+\definecolor{f2}{rgb}{0.06667,0.3451,0.62353}
+\colorlet{f3}{cadmiumgreen}
+
+
+\definecolor{mycolor}{rgb}{0.302, 0.416, 0.596} % 4D6A98 en RVB
+\newcommand\encircle[1]{%
+  \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=-1pt, fill=mycolor, text=white, minimum size=6pt, text height=1.3ex, text depth=.25ex] {\strut\tiny\sf #1};%
+}
+
+
+
+% --- liens wikipedia
+\newcommand{\hrefwiki}[1]{\href{#1}{$^\textup{\color{Fblue2}\rm\scriptsize w}$}}
+
+% --- liens PEP
+\newcommand{\hrefpep}[1]{\href{#1}{$^\textup{\color{Fblue2}\rm\tiny PEP}$}}
+
+% --- integration
+\newcommand{\rmd}   {{{\textrm{\upshape d}}}}
+
+%\newcommand{\mmin}{{\textrm{min}}}
+%\newcommand{\mmax}{{\textrm{max}}}
+%\newcommand{\var}{{\textrm{var}}}
+%\newcommand{\Var}{{{\mathbb V}\hspace{-0.1em}\textrm{\upshape ar}}}
+%\newcommand{\Cov}{{{\mathbb C}\textrm{\upshape ov}}}
+%\newcommand{\Cor}{{{\mathbb C}\textrm{\upshape or}}}
+
+% --- les ensembles 
+\newcommand{\V}        {\mathbb V}
+\newcommand{\N}        {\mathbb N}
+\newcommand{\D}        {\mathbb D}
+\newcommand{\Z}        {\mathbb Z}
+\newcommand{\C}        {\mathbb C}
+\newcommand{\T}        {\mathbb T}
+\newcommand{\E}        {\mathbb E}
+\newcommand{\F}        {\mathbb F}
+\newcommand{\X}        {\mathbb X}
+\newcommand{\Y}        {\mathbb Y}
+\newcommand{\R}        {\mathbb R}
+\newcommand{\Q}        {\mathbb Q}
+\newcommand{\Para}     {\P}
+\renewcommand{\P}      {\mathbb P}
+
+\newcommand{\ot}        {\leftarrow}
+
+%\newcommand{\rfr}[1]    {\stackrel{\circ}{#1}}
+%\newcommand{\equiva}    {\displaystyle\mathop{\simeq}}
+%\newcommand{\equivb}    {\displaystyle\mathop{\sim}}
+%\newcommand{\simiid}    {\stackrel{\textrm{\tiny\upshape iid}}{\sim}}
+%\newcommand{\simi}      {\stackrel{\textrm{\tiny\upshape i}}{\sim}}
+%\newcommand{\cv}      {\mathop{\;{\rightarrow}\;}}
+%\newcommand{\cvetroite}      {\mathop{\;{\Rightarrow}\;}}
+%\newcommand{\vvers}     {\mathop{\;{\longrightarrow}\;}}
+%\newcommand{\cvEtroite} {\mathop{\;{\Longrightarrow}\;}}
+%
+%
+%\newcommand{\cvas}      {\mathop{\xrightarrow[]{\mathrm{p.s.}}}}
+%\newcommand{\cvproba}   {\mathop{\xrightarrow[]{\mathrm{proba.}}}}
+%\newcommand{\cvlaw}     {\mathop{\xrightarrow[]{\mathrm{loi}}}}
+%\newcommand{\cvlp}[1]   {\mathop{\xrightarrow[]{L^{#1}}}}
+%
+%
+%
+%\newcommand{\cvweak}      {\xrightarrow[]{\mathrm{faible}}}
+%\newcommand{\Limsup}    {\mathop{\overline{\mathrm{lim}}}}
+%\newcommand{\Liminf}    {\mathop{\underline{\mathrm{lim}}}}
+%\newcommand{\osc}      {\mathop{\hbox{\mathrm osc}}}
+%\newcommand{\versup}    {\mathop{\;{\nearrow}\;}}
+%\newcommand{\versdown}  {\mathop{\;{\searrow}\;}}
+%\newcommand{\argmax}    {{\textrm{\upshape Arg}}\max}
+%\newcommand{\argmin}    {\textrm{\upshape Arg}\min}
+%\newcommand{\esssup}    {\textrm{\upshape ess}\sup}
+%\newcommand{\essinf}    {\textrm{\upshape ess}\inf}
+%\renewcommand{\div}     {\textrm{\upshape div}}
+%\newcommand{\rot}       {\textrm{\upshape rot}}
+%\newcommand{\supp}      {\textrm{\upshape supp}}
+%\newcommand{\cov}       {\textrm{\upshape cov}}
+%\newcommand{\trace}     {\textrm{\upshape trace}}
+%\newcommand{\diag}      {\textrm{\upshape diag}}
+%\newcommand{\indep}      {\perp\!\!\!\!\perp}
+%\newcommand{\abs}    [1] {\left| #1 \right|}
+\newcommand{\norm}   [1] {\left\Vert #1 \right\Vert}
+%\newcommand{\ccrochet}[1] {\langle\!\langle #1 \rangle\!\rangle}
+%\newcommand{\crochet}[1] {\langle #1 \rangle}
+%\newcommand{\Crochet}[2] {\langle #1 \,,\, #2 \rangle}
+%\newcommand{\espc}   [3] {E_{#1}\left(\left. #2 \right| #3 \right)}
+%\newcommand{\tbullet}   {$\bullet$}
+%\newcommand{\ot}        {\leftarrow}
+%\newcommand{\carre}     {\hfill$\Box$}
+%\newcommand{\carreb}    {\hfill\rule{0.25cm}{0.25cm}}
+%\newcommand{\demi}{{{\textstyle\frac{1}{2}}}}
+%\newcommand{\quart}{{{\textstyle\frac{1}{4}}}}
+%
+%% --- les lettres blackboard (math)
+%\newcommand{\bbA}  {{\mathbb A}}
+%\newcommand{\bbB}  {{\mathbb B}}
+%\newcommand{\bbC}  {{\mathbb C}}
+%\newcommand{\bbD}  {{\mathbb D}}
+%\newcommand{\bbE}  {{\mathbb E}}
+%\newcommand{\bbF}  {{\mathbb F}}
+%\newcommand{\bbG}  {{\mathbb G}}
+%\newcommand{\bbH}  {{\mathbb H}}
+%\newcommand{\bbI}  {{\mathbb I}}
+%\newcommand{\bbJ}  {{\mathbb J}}
+%\newcommand{\bbK}  {{\mathbb K}}
+%\newcommand{\bbL}  {{\mathbb L}}
+%\newcommand{\bbM}  {{\mathbb M}}
+%\newcommand{\bbN}  {{\mathbb N}}
+%\newcommand{\bbO}  {{\mathbb O}}
+%\newcommand{\bbP}  {{\mathbb P}}
+%\newcommand{\bbQ}  {{\mathbb Q}}
+%\newcommand{\bbR}  {{\mathbb R}}
+%\newcommand{\bbS}  {{\mathbb S}}
+%\newcommand{\bbT}  {{\mathbb T}}
+%\newcommand{\bbU}  {{\mathbb U}}
+%\newcommand{\bbV}  {{\mathbb V}}
+%\newcommand{\bbW}  {{\mathbb W}}
+%\newcommand{\bbX}  {{\mathbb X}}
+%\newcommand{\bbY}  {{\mathbb Y}}
+%\newcommand{\bbZ}  {{\mathbb Z}}
+%
+%% --- les lettres calligraphiques
+%\newcommand{\AAA}  {\mathcal{A}}
+%\newcommand{\BB}   {\mathcal{B}}
+%\newcommand{\CC}   {\mathcal{C}}
+%\newcommand{\DD}   {\mathcal{D}}
+%\newcommand{\EE}   {\mathcal{E}}
+%\newcommand{\FF}   {\mathcal{F}}
+%\newcommand{\GG}   {\mathcal{G}}
+\newcommand{\HH}   {\mathcal{H}}
+%\newcommand{\II}   {\mathcal{I}}
+%\newcommand{\JJ}   {\mathcal{J}}
+%\newcommand{\KK}   {\mathcal{K}}
+%\newcommand{\LL}   {\mathcal{L}}
+%\newcommand{\NN}   {\mathcal{N}}
+%\newcommand{\MM}   {\mathcal{M}}
+%\newcommand{\OO}   {\mathcal{O}}
+%\newcommand{\PP}   {\mathcal{P}}
+%\newcommand{\QQ}   {\mathcal{Q}}
+%\newcommand{\RR}   {\mathcal{R}}
+%\renewcommand{\SS} {\mathcal{S}}
+%\newcommand{\SSS}  {\mathcal{S}}
+\newcommand{\TT}   {\mathcal{T}}
+%\newcommand{\UU}   {\mathcal{U}}
+%\newcommand{\VV}   {\mathcal{V}}
+%\newcommand{\WW}   {\mathcal{W}}
+%\newcommand{\XX}   {\mathcal{X}}
+%\newcommand{\YY}   {\mathcal{Y}}
+%\newcommand{\ZZ}   {\mathcal{Z}}
+%
+%% --- utilitaires
+%\newcommand{\rond}[1]     {\stackrel{\circ}{#1}}
+\newcommand{\indic}{{\mathbf1}}
+%\renewcommand{\epsilon}{\varepsilon}
+%\newcommand{\marginal}[1]{%
+%        \leavevmode\marginpar{\tiny\raggedright#1\par}}
+%\newcommand{\warning}{\setlength{\unitlength}{1cm}
+%  \begin{picture}(0.6,0.5)(0,0)
+%  \put(0.25,0.15){\makebox(0,0){{\huge$\bigtriangleup$}}}
+%  \put(0.25,0.16){\makebox(0,0){{\small\sf !}}}
+%  \end{picture}}
+%
+%% --- bold math
+%\def\bm#1{%
+%  \mathchoice%
+%       {\setbox1=\hbox{$#1$}\dobm}
+%       {\setbox1=\hbox{$#1$}\dobm}
+%       {\setbox1=\hbox{\scriptsize$#1$}\dobm}
+%       {\setbox1=\hbox{\tiny$#1$}\dobm}}
+%\def\dobm{
+%    \copy1\kern-\wd1\kern0.05ex\copy1\kern-\wd1\kern0.05ex\box1}
+
+
+
+% --- modifie enumerate
+\renewcommand{\theenumi}{\roman{enumi}}
+\renewcommand{\labelenumi}{{\upshape({\itshape\theenumi}\/)}}
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{{\itshape\theenumii.}}
+%\renewcommand{\phi}{\varphi}
+\newcommand{\fenumi}{{\upshape({\itshape i}\/)}}
+\newcommand{\fenumii}{{\upshape({\itshape ii}\/)}}
+\newcommand{\fenumiii}{{\upshape({\itshape iii}\/)}}
+\newcommand{\fenumiv}{{\upshape({\itshape iv}\/)}}
+\newcommand{\fenumv}{{\upshape({\itshape v}\/)}}
+\newcommand{\fenum}[1]{\upshape({\itshape #1}\/)}
+
+%\renewcommand{\atop}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+%\renewcommand{\choose}[2]{\genfrac{(}{)}{0pt}{}{#1}{#2}}
+%
+%\newtheorem{theorem}      {Th\'eor\`eme}[section]
+%\newtheorem{theorem*}     {theorem}
+%\newtheorem{proposition}  [theorem]{Proposition}
+%\newtheorem{definition}   [theorem]{D\'efinition}
+%\newtheorem{lemma}        [theorem]{Lemme}
+%\newtheorem{exercise}     [theorem]{Exercice}
+%\newtheorem{example}      [theorem]{Exemple}
+%\newtheorem{simulation}   [theorem]{Simulation}
+%\newtheorem{remark}       [theorem]{Remarque}
+%\newtheorem{remarks}      [theorem]{Remarques}
+%\newtheorem{corollary}    [theorem]{Corollaire}
+%\newtheorem{result}       [theorem]{R\'esultat}
+%\newtheorem{hypothesis}   [theorem]{Hypoth\`ese}
+%\newtheorem{hypotheses}   [theorem]{Hypoth\`eses}
+%
+%\newcommand{\proof}        {\paragraph{Preuve}}
+%
+%\newcommand{\eqas}      {\stackrel{\textrm{{\upshape\scriptsize p.s.}}}{=}}
+%\newcommand{\eqlaw}     {\stackrel{\hbox{{\scriptsize loi}}}{=}}
+%\newcommand{\law}       {{\textrm{\upshape loi}}}
+%\newcommand{\limas}     {\mathop{\hbox{\upshape lim--p.s.}}}
+%\newcommand{\rank}      {\textrm{rang}}
+%\newcommand{\sign}      {\textrm{signe}}
+%
+%%\newcommand{\eqdef}     {\stackrel{\hbox{\rmfamily\tiny déf}}{=}}
+\newcommand{\eqdef}     {\stackrel{\textup{\tiny déf}}{=}}
+%
+%\newenvironment{solution}[1]
+%{\paragraph{Solution de l'exercice \ref{#1}}}
+%{}
+%
+%
+%
+%\newenvironment{smallpmatrix}
+%     {\left(\begin{smallmatrix}}
+%     {\end{smallmatrix}\right)}
+
+
+\newenvironment{smallpmatrix}
+     {\left(\begin{smallmatrix}}
+     {\end{smallmatrix}\right)}
+
+
+
+
+%--- quelques variables conditionnelles (cf package ifthen) --------------
+
+%% define a new boolean variable
+%\newboolean{showDontforget}
+%\newboolean{showProofs}
+%
+%
+%
+%% If set to true, comments will be inserted, otherwise ignored
+%\setboolean{showDontforget}{true}
+%\setboolean{showProofs}{false}
+
+%
+%\newcommand{\fnote}[1]
+%{{\mbox{}\\\noindent\color{red}\rule{1cm}{2mm}\hfill  #1 \hfill\rule{1cm}{2mm}}\typeout{---------- #1 ------------}}
+%
+%\newcommand{\Fnote}[1]
+%{{\mbox{}\\\noindent\color{red}\rule{\textwidth}{2mm}\\  #1 \\ \rule{\textwidth}{2mm}}\typeout{---------- #1 ------------}}
+%
+%\newcommand{\dontforget}[1]{\ifthenelse {\boolean{showDontforget}} {\fnote{#1}} {}}
+%\newcommand{\Dontforget}[1]{\ifthenelse {\boolean{showDontforget}} {\Fnote{#1}} {}}
+%\newcommand{\comments}[1]{\ifthenelse {\boolean{showComments}} {{\color{Fblue2} #1}} {}}
+
+ 
+ 
+% --- suppression indent ---------------------------------------------------- 
+ 
+\newlength\tindent
+\setlength{\tindent}{\parindent}
+%\setlength{\parindent}{0pt}
+\renewcommand{\indent}{\hspace*{\tindent}}
+ 
+ 
+% use \todo{text} for a comment within your page/section
+\makeatletter
+\renewcommand*{\@fnsymbol}[1]{\ensuremath{\ifcase#1\or *\or **\or \ddagger\or
+   \mathsection\or \mathparagraph\or \|\or **\or \dagger\dagger
+   \or \ddagger\ddagger \else\@ctrerr\fi}}
+\makeatother
+
+
+% dans les footnotes
+\usepackage[flushmargin]{footmisc}
+
+\setlength{\parindent}{0pt}
+
+
+
+% --- changement de la taille de fonte et couleur pour verbatim -------------
+
+
+\makeatletter
+\def\verbatim@font{\color{Fblue2}\upshape\ttfamily}
+\makeatother
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+
+\setlength{\parskip}{1ex}
+\newcommand{\ta}{{\texttt{A}}}
+\newcommand{\tb}{{\texttt{B}}}
+\newcommand{\tc}{{\texttt{C}}}
+\newcommand{\piobs} {\pi^{\textrm{\tiny obs}}}
+\newcommand{\rhoobs} {\rho^{\textrm{\tiny obs}}}
+\newcommand{\obs} {{\textrm{\tiny obs}}}
+\newcommand{\muobs} {\mu^{\textrm{\tiny obs}}}
+
+%-------------------------------------------------------------------------
+% des macros après le préambule (!))
+%-------------------------------------------------------------------------
+% --- cosmétrique
+\renewcommand{\labelitemi}{\footnotesize\textbullet}
+%-------------------------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% table des matières
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength\cftparskip{0pt}
+\setlength\cftbeforesecskip{2pt}
+\setlength\cftaftertoctitleskip{2pt}
+\renewcommand{\cfttoctitlefont}{\normalfont\MakeUppercase} % chgt font titre
+\renewcommand{\cftsecfont}{\normalfont} % titre de la section non bf  
+\renewcommand{\cftsecpagefont}{\normalfont} % page de la section non bf
+
+%\renewcommand{\cftXfont}{\hfill\bfseries}
+
+{\footnotesize
+
+\setcounter{tocdepth}{2}
+%\begin{quote}
+
+%\end{quote}
+%\renewcommand{\baselinestretch}{1}
+}
+
+
+% --- liens wikipedia|python|openclass|pep
+%\newcommand{\hrefwiki}[1]{\href{#1}{$^\textup{\color{ColorLienExterne}\tiny w}$}}
+%\newcommand{\hrefpython}[1]{\href{{#1}}{$^\textup{\color{ColorLienExterne}\tiny p}$}}
+%\newcommand{\hrefopen}[1]{\href{{#1}}{$^\textup{\color{ColorLienExterne}\tiny o}$}}
+%\newcommand{\hrefpep}[1]{\href{#1}{$^\textup{\color{ColorLienExterne}\rm\tiny PEP}$}}
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SYSTEME DE NOTE ETC.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage[textwidth=-0.7in]{todonotes}
+%\usepackage{todonotes}
+%\setlength\marginparwidth{0.5in}
+
+
+
+
+\newcommand{\brouillon}[1]{\ifthenelse {\boolean{showComments}} {{\footnotesize\color{brouillon} #1}} {}}
+
+
+
+\usepackage{todonotes}
+\setlength\marginparwidth{0.55in}
+\setlength{\marginparsep}{1pt}
+
+\newcommand{\warningr}[2][noinline]{\ifthenelse {\boolean{showNotes}} 
+{{\todo[#1, color=yellow,size=\tiny]
+  {#2}}} {}}
+\newcommand{\warningl}[2][noinline]{\ifthenelse {\boolean{showNotes}} 
+{{\reversemarginpar\todo[#1, color=yellow,size=\tiny]
+  {#2}}} {}}
+\newcommand{\fab}[2][noinline]{\ifthenelse {\boolean{showNotes}} 
+{{\todo[#1, color=yellow!30!white,size=\tiny]
+  {#2}}} {}}
+
+
+\newboolean{showDontforget}   
+\newboolean{showProofs}
+\newboolean{showPythonV}      % idem commentaire mais pour versions python
+\newboolean{showBacasable}
+
+
+% If set to true, comments will be inserted, otherwise ignored
+\setboolean{showDontforget}{true}
+\setboolean{showProofs}{false}
+\setboolean{showPythonV}{false} % parle des version de python
+\setboolean{showBacasable}{false} % parle des version de python
+
+\newboolean{showComments}
+\setboolean{showComments}{false}
+
+
+\newcommand{\fnote}[1]
+{{\mbox{}\\\noindent\color{red}\rule{1cm}{2mm}\hfill  #1 \hfill\rule{1cm}{2mm}}\typeout{---------- #1 ------------}}
+
+\newcommand{\Fnote}[1]
+{{\mbox{}\\\noindent\color{red}\rule{\textwidth}{2mm}\\  #1 \\ \rule{\textwidth}{2mm}}\typeout{---------- #1 ------------}}
+
+\newcommand{\dontforget}[1]{\ifthenelse {\boolean{showDontforget}} {\fnote{#1}} {}}
+\newcommand{\Dontforget}[1]{\ifthenelse {\boolean{showDontforget}} {\Fnote{#1}} {}}
+\newcommand{\comments}[1]{\ifthenelse {\boolean{showComments}} {{\color{gray} #1}} {}}
+
+\newcommand{\pythonV}[1]{\ifthenelse {\boolean{showPythonV}} {{\color{Gray} #1}} {}}
+\newcommand{\bacasable}[1]{\ifthenelse {\boolean{showBacasable}} {#1} {}}
+
+\newcommand{\beacon}[1]{%
+\mbox{}
+\medskip
+\mbox{}\hfill\begin{minipage}{8cm}\sf\footnotesize\color{blue} #1\end{minipage}
+\medskip
+\mbox{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fin de --- SYSTEME DE NOTE ETC.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%/////////////////////////////////////////////////////////////////////
+%  biblatex
+%/////////////////////////////////////////////////////////////////////
+% about biblatex
+% 	multiple reference set sorted by keywords 
+% https://texblog.org/2012/10/22/multiple-bibliographies-with-biblatex/
+% https://www.overleaf.com/learn/latex/Questions/Creating_multiple_bibliographies_in_the_same_document
+% https://mirrors.ibiblio.org/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
+
+
+\usepackage[
+	giveninits=true,
+	backend=biber,
+	style=numeric-comp,
+	defernumbers=true,
+%   refsegment=subsection,
+%    refsection=section,
+    isbn=false,
+    doi=false,
+    url=true,
+    eprint=false,
+    sorting=nyt,
+    maxbibnames=5,
+	]{biblatex}
+\AtEveryBibitem{\clearlist{language}} %suppress language field
+\addbibresource{/Users/campillo/Documents/2-ressources/fab.bib}
+
+\DeclareFieldFormat{edition}{%
+  \ifinteger{#1}
+    {\bibstring{edition}~\mkbibordeditio‌​n{#1}}
+    {#1\isdot\ edition}}
+    
+    
+    	
+\renewbibmacro{in:}{%
+  \ifentrytype{article}{}{\printtext{\bibstring{in}\intitlepunct}}}	
+
+\AtEveryBibitem{\clearfield{month}} % pas de mois
+\AtEveryCitekey{\clearfield{month}} %
+% -- pas de 'serie'
+\AtEveryBibitem{\clearfield{series}}
+% -- suppress 'pp.'
+%\DeclareFieldFormat[article]{pages}{#1} % suppress pp for articles
+\DeclareFieldFormat{pages}{#1}          % idem for all
+% -- suppress 'vol.'
+\DeclareFieldFormat[article]{volume}{#1} % suppress 'vol.'
+% -- 
+\usepackage{xpatch}
+
+\xpatchbibmacro{journal+issuetitle}{%
+  \setunit*{\addspace}%
+  \iffieldundef{series}}
+  {%
+  \setunit*{\addcomma\space}%
+  \iffieldundef{series}}{}{}
+
+% --- year à la fin
+\newtoggle{bbx:datemissing}
+
+\renewbibmacro*{date}{\toggletrue{bbx:datemissing}%
+}
+
+\renewbibmacro*{issue+date}{%
+  \toggletrue{bbx:datemissing}%
+  \iffieldundef{issue}
+    {}
+    {\printtext[parens]{%
+       \printfield{issue}}}%
+  \newunit}
+
+\newbibmacro*{date:print}{%
+  \togglefalse{bbx:datemissing}%
+  \printdate}
+
+\renewbibmacro*{chapter+pages}{%
+  \printfield{chapter}%
+  \setunit{\bibpagespunct}%
+  \printfield{pages}%
+  \newunit
+  \usebibmacro{date:print}%
+  \newunit}
+
+\renewbibmacro*{note+pages}{%
+  \printfield{note}%
+  \setunit{\bibpagespunct}%
+  \printfield{pages}%
+  \newunit
+  \usebibmacro{date:print}%
+  \newunit}
+
+\renewbibmacro*{addendum+pubstate}{%
+  \iftoggle{bbx:datemissing}
+    {\usebibmacro{date:print}}
+    {}%
+  \printfield{addendum}%
+  \newunit\newblock
+  \printfield{pubstate}}
+% --- fin de (year à la fin)
+
+\ExecuteBibliographyOptions{doi=false}
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{#1}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+\DeclareFieldFormat[article]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+\DeclareFieldFormat[inproceedings]{title}{\usebibmacro{string+doi}{\mkbibquote{#1}}}
+%\DeclareDelimFormat{finalnamedelim}{\addspace\&\space}
+
+\DeclareFieldFormat{url}{[\href{#1}{link}]}
+\renewcommand\bibpagespunct{\ifentrytype{article}{\addcolon}{\addcomma}\space}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}
+  \printfield[parens]{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}}
+
+% --   https://mirrors.ibiblio.org/CTAN/fonts/fontawesome5/doc/fontawesome5.pdf
+\newcommand{\fcite}[1]{{{\noindent\footnotesize$\blacktriangleright$\ }\color{ColorCite} \citeauthor{#1}~\citeyear{#1}, \citetitle{#1}~\cite{#1}}}
+
+\DeclareCiteCommand{\citeannotation}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\color{ColorAnnotation}\printfield{annotation}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+
+\newcommand{\fciteannotation}[1]
+{\vspace{-0.em}
+\begin{quote}
+\color{gray}
+\tiny\citeannotation{#1}
+\end{quote}
+\vspace{-0.em}} 
+
+\DeclareCiteCommand{\tabcite}
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+  
+\DeclareCiteCommand{\fcitealt}%[\mkbibbrackets]
+  {\usebibmacro{cite:init}%
+   \usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}%
+   \usebibmacro{postnote}}
+
+% non justified 
+%\AtBeginBibliography{\raggedright}
+
+
+
+% sodium 
+%  AB77B3
+
+\definecolor{sodium}{HTML}{FAAF30}
+\definecolor{potassium}{HTML}{AB77B3}
+\colorlet{transition}{CornflowerBlue}
+\colorlet{open}{ForestGreen}
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+
+\newcolumntype{s}{>{\columncolor{sodium!20}}r}
+\newcolumntype{p}{>{\columncolor{potassium!20}}r}
+
+
+\usepackage{mhchem}
+\usepackage{chemformula}
+\usepackage{nicematrix}
+
+
+\defbibenvironment{bibliography}
+ {\list
+ {\printtext[labelnumberwidth]{%
+    \printfield{labelprefix}%
+    \printfield{labelnumber}}}
+ {\setlength{\labelwidth}{\labelnumberwidth}%
+ \setlength{\leftmargin}{0pt}%{\labelwidth}%
+ \setlength{\labelsep}{\biblabelsep}%
+ %\addtolength{\leftmargin}{\labelsep}%
+ \setlength{\itemsep}{\bibitemsep}%
+ \setlength{\parsep}{\bibparsep}}%
+ \renewcommand*{\makelabel}[1]{\hss\hspace{\dimexpr\labelnumberwidth+\labelsep}##1}}
+ {\endlist}
+ {\item}
+
+\makeatletter
+\renewcommand*{\@biblabel}[1]{\textbf{[#1]}\ }
+\makeatother
+
+\DeclareFieldFormat{boldimportant}{{\mkbibbold{#1}}{#1}}
+
+\DefineBibliographyExtras{french}{\restorecommand\mkbibnamefamily}
+%/////////////////////////////////////////////////////////////////////
+%  Insertion de figures
+%/////////////////////////////////////////////////////////////////////
+
+\usepackage{graphicx} 
+\usepackage{fancybox,exscale,rotate,epsfig}
+\usepackage{wrapfig}
+\usepackage{pifont}
+\usepackage{letterspace}
+\usepackage{supertabular}
+%\usepackage{longtable} % tableau sur plusieurs pages
+\usepackage{rotating}
+\usepackage{enumitem} % pour changer les itemize etc
+	\setlist{leftmargin=0.4cm}
+\usepackage{tocloft}
+\usepackage{setspace}   % produces double and one-and-one-half line 
+	                    % spacing based on the point size in use
+\usepackage{framed}
+
+\usepackage{upquote,textcomp}  % pour textquotesingle
+\makeatletter
+\let \@sverbatim \@verbatim
+\def \@verbatim {\@sverbatim \verbatimplus}
+{\catcode`'=13 \gdef \verbatimplus{\catcode`'=13 \chardef '=13 }} 
+\makeatother
+
+
+
+
+\usepackage{cprotect}
+% pour avoir des accents dans les URL, il faut bosser:
+% 	http://www.utf8-chartable.de
+% 	 é \%c3\%a9
+% 	 è \%c3\%a8
+
+\DeclareGraphicsRule{.pdftex}{pdf}{*}{}
+\usepackage{epsfig}
+\usepackage{calc}      % Outils de calcul
+\usepackage{ifthen}    % Tests if/then/else
+\usepackage{MnSymbol,wasysym}
+
+
+
+% --- modifie enumerate
+\renewcommand{\theenumi}{\roman{enumi}}
+\renewcommand{\labelenumi}{{\upshape({\itshape\theenumi}\/)}}
+\renewcommand{\theenumii}{\alph{enumii}}
+\renewcommand{\labelenumii}{{\itshape\theenumii.}}
+%\renewcommand{\phi}{\varphi}
+%\newcommand{\fenumi}{{\upshape({\itshape i}\/)}}
+%\newcommand{\fenumii}{{\upshape({\itshape ii}\/)}}
+%\newcommand{\fenumiii}{{\upshape({\itshape iii}\/)}}
+%\newcommand{\fenumiv}{{\upshape({\itshape iv}\/)}}
+%\newcommand{\fenumv}{{\upshape({\itshape v}\/)}}
+%\newcommand{\fenum}[1]{\upshape({\itshape #1}\/)}
+
+
+
+
+
+%/////////////////////////////////////////////////////////////////////
+%  listings 
+%/////////////////////////////////////////////////////////////////////
+
+\usepackage{listings}
+\usepackage{pythonhighlight}
+
+
+\renewcommand{\ttdefault}{pcr}
+	% tt+bf: you need a font which provides such a combination
+	% the font courier has this combination implemented instead 
+	% of Computer Modern.
+
+\lstset{ %
+  xleftmargin=15pt, % marge de gauche
+  xrightmargin=0pt, % marge de gauche
+  backgroundcolor=\color{gray!10},    
+  	% choose the background color; you must add 
+  	% \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\ttfamily\footnotesize,        
+  	% the size of the fonts that are used for the code
+  breakatwhitespace=false,         
+  	% sets if automatic breaks should only happen at whitespace
+  breaklines=true, % sets automatic line breaking
+  captionpos=t, % sets the caption-position to bottom
+  commentstyle=\color{ColorCommandePythonCom}, % comment style
+  escapeinside={(*@}{@*)},
+  	% if you want to add LaTeX within your code
+  extendedchars=true,              
+  	% lets you use non-ASCII characters; for 8-bits encodings 
+	% only, does not work with UTF-8
+  literate={«}{{\guillemotleft}}1
+           {»}{{\guillemotright}}1
+           {î}{{\^i}}1 
+           {à}{{\`a}}1 
+           {ù}{{\`u}}1 
+           {ã}{{\~a}}1 
+           {é}{{\'e}}1 
+           {è}{{\`e}}1 
+           {ê}{{\^e}}1
+           {'}{{'}}1 
+           {ô}{{\^o}}1 
+           {ç}{{\c c}}1,
+  frame=none, % adds a frame around the code (ou single)
+  keywordstyle=\ttfamily\color{BrickRed}, %\bfseries\color{BrickRed}, % keyword style
+  numbers=left,
+  	% where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt, % how far the line-numbers are from the code
+  numberstyle=\tiny\color{ColorCommandePythonCom}, 
+  	% the style that is used for the line-numbers
+  rulecolor=\color{black},         
+  	% if not set, the frame-color may be changed on line-breaks 
+	% within not-black text (e.g. comments (green here))
+  showspaces=false,                
+  	% show spaces everywhere adding particular underscores; 
+	% it overrides 'showstringspaces'
+  showstringspaces=false, % underline spaces within strings only
+  showtabs=false,                  
+  	% show tabs within strings adding particular underscores
+  stepnumber=1,                    
+  	% the step between two line-numbers. If it's 1, 
+	% each line will be numbered
+  %stringstyle=\color{RoyalBlue},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   
+  	% show the filename of files included with \lstinputlisting; 
+	% also try caption instead of title
+}
+
+
+\lstdefinestyle{python}{
+  basicstyle=%
+    \ttfamily\small%\color{blue}%
+    \lst@ifdisplaystyle\scriptsize\fi,
+  language=Python,
+  language=Python, % the language of the code
+  alsoletter={:},
+  alsoletter={:\n},
+  alsoletter={*},
+  deletekeywords={...},
+  	% if you want to delete keywords from the given language
+  morekeywords={as,*,:\n,...,.append} % if you want to add more keywords to the set
+}
+
+     
+\lstdefinestyle{shell}{
+  xleftmargin=0pt, % marge de gauche
+  language=sh,
+  backgroundcolor=\color{white},    
+  delim=[il][\bfseries]{BB},
+  deletekeywords={for},
+  otherkeywords={port,uninstall,install},
+  numbers=none
+}
+
+
+%keywords=[⟨number⟩]{⟨list of keywords⟩}
+%morekeywords=[⟨number⟩]{⟨list of keywords⟩}
+%deletekeywords=[⟨number⟩]{⟨list of keywords⟩}
+%  define, add to or remove the keywords from keyword list ⟨number⟩. The use of 
+%  keywords is discouraged since it deletes all previously defined keywords in 
+%  the list and is thus incompatible with the alsolanguage key.
+%  Please note the keys alsoletter and alsodigit below if you use unusual charaters 
+%  in keywords.
+%
+%otherkeywords={⟨keywords ⟩}
+%  Defines keywords that contain other characters, or start with digits. 
+%  Each given ‘keyword' is printed in keyword style, but without changing the 
+%  ‘letter', ‘digit' and ‘other' status of the characters. This key is designed 
+%  to define keywords like =>, ->, -->, --, ::, and so on. If one keyword is a 
+%  subsequence of another (like -- and -->), you must specify the shorter first.
+
+\lstdefinestyle{ipython}{
+%  You can use keywords=[2]{...}, keywordstyle=[2] 
+% for a second group of keywords with different style 
+  basicstyle=%
+    \ttfamily\upshape\small%\color{blue}%
+    \lst@ifdisplaystyle\scriptsize\fi,
+  xleftmargin=0pt, % marge de gauche
+  language=Python,
+  morecomment=[n][\color{ColorCommandePythonIn}]{\ \ \ ...}{:},
+  morecomment=[n][\color{ColorCommandePythonIn}]{In\ [}{]\:},
+  morecomment=[n][\color{ColorCommandePythonOut}]{Out\ [}{]\:},
+  morecomment=[n][\color{ColorCommandePythonOut}]{Out\[}{]\:},
+  backgroundcolor=\color{white},
+  alsoletter={.},
+  alsoletter={*},
+  alsoletter={**},
+  alsoletter={:},
+  deletekeywords={...},
+  morekeywords={as,*,**,:\n,
+    __add__,append,add,
+    bytes,
+    capitalize,copy,count,conjugate,clear,complex,
+    deepcopy,difference,difference_update,difference_,discard,
+    else,exit,extend,
+    False,find,
+    getrefcount,getitem,__getitem__,
+    imag,index,isupper,islower,isalpha,items,isinstance,__iter__,iterkeys,
+      isalnum,isdigit,isspace,intersection,intersection_update,isdisjoint,
+      issubset,issuperset,
+    join,
+    keys,
+    __len__,lower,
+    pop,
+    real,replace,reverse,remove,
+    sin,sort,sorted,shuffle,split,swapcase,symmetric_difference,
+      symmetric_difference_update,
+    title,True,
+    upper,union,update,
+    values,
+    zfill
+    },
+  otherkeywords={
+    },
+  numbers=none
+}
+
+
+
+\lstdefinestyle{neutral}{
+%  You can use keywords=[2]{...}, keywordstyle=[2] 
+% for a second group of keywords with different style 
+  xleftmargin=0pt, % marge de gauche
+  backgroundcolor=\color{white},
+  numbers=none
+  }
+
+
+\renewcommand\lstlistingname{Script}
+\renewcommand\lstlistlistingname{Scripts}
+
+% --- mes listings
+
+\makeatletter
+\newcommand\applyCurrentFontsize
+{%
+  % we first save the current fontsize, baseline-skip,
+  % and listings' basicstyle
+  \let\f@sizeS@ved\f@size%
+  \let\f@baselineskipS@ved\f@baselineskip%
+  \let\basicstyleS@ved\lst@basicstyle%
+  % we now change the fontsize of listings' basicstyle
+  \renewcommand\lst@basicstyle%
+  {%
+      \basicstyleS@ved%
+      \fontsize{\f@sizeS@ved}{\f@baselineskipS@ved}%
+      \selectfont%
+  }%
+}
+\makeatother
+
+
+\newcommand{\pinline}[1]{\lstinline[style=ipython]{#1}}
+\lstnewenvironment{iplisting}[1][]{%
+    \lstset{aboveskip=0.3\baselineskip,
+    belowskip=0.3\baselineskip,
+    xleftmargin=5pt,
+    caption=,
+    style=ipython,#1}%
+}{}
+
+%\newcommand{\pinline}[1]{\lstinline[style=ipython]{#1}}
+%\lstnewenvironment{iplisting}[1][]{%
+%    \lstset{aboveskip=0.3\baselineskip,
+%    belowskip=0.3\baselineskip,
+%    xleftmargin=5pt,
+%    caption=,
+%    style=ipython,#1}%
+%    \applyCurrentFontsize%
+%}{}
+
+
+%/////////////////////////////////////////////////////////////////////
+%  tikz
+%/////////////////////////////////////////////////////////////////////
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{automata, arrows.meta, positioning}
+ \usepackage{xifthen}
+% trick for 'in font nullfont', fait apparaître les erreurs
+% \font\nullfont=cmr10
+
+% --- changement de fonte et couleur pour verbatim -------------
+
+
+\makeatletter
+%\def\verbatim@font{\color{ColorCommandePython}\upshape\ttfamily}
+\def\verbatim@font{\upshape\ttfamily}
+\makeatother
+
+\def\Put(#1,#2)#3{\leavevmode\makebox(0,0){\put(#1,#2){#3}}}
+
+% ---- pstrick OR tikz
+% Pour le moment je choisis TIKZ
+% APRES plusieurs essais... ça marche
+
+%% A VIRER \usepackage[pdf]{pstricks}
+%%         \usepackage{pst-node,pst-plot,pst-tree,pst-all}
+%% mettre dans cet ordre:
+%\usepackage{auto-pst-pdf,pstricks-add}  % [off] si pas de modification des pspictures
+%\usepackage{pst-node,pst-plot,pst-tree,pst-all}
+%\psset{colsep=1cm,rowsep=2cm,mnode=C,fillstyle=solid,fillcolor=blue,linecolor=blue!40}
+%
+
+% EXEMPLE
+%\begin{figure}[H]
+%\psset{xunit=1.0cm,yunit=1.0cm,algebraic=true,dimen=middle,dotstyle=o,linewidth=0.8pt,arrowsize=3pt 2,arrowinset=0.25}
+%\begin{pspicture*}(-4.3,-3.12)(7.3,6.3)
+%\psline{->}(0.,0.)(6.,0.)
+%\psline(1.,0.2)(1.,-0.2)
+%\psline(1.,0.2)(1.,-0.2)
+%\psline(1.,0.2)(1.,-0.2)
+%\psline(2.,0.2)(2.,-0.2)
+%\psline(3.,0.2)(3.,-0.2)
+%\psline(4.,0.2)(4.,-0.2)
+%\psline(5.,-0.2)(5.,0.2)
+%\rput[tl](2.94,-0.3){5}
+%\rput[tl](1.94,-0.3){4}
+%\rput[tl](0.94,-0.32){3}
+%\rput[tl](3.94,-0.3){6}
+%\rput[tl](4.94,-0.32){7}
+%\psline{->}(2.98,0.42)(4.98,0.42)
+%\psdots[dotsize=5pt 0](2.98,0.42)
+%\pscircle(2.98,0.42){2.5pt}
+%\end{pspicture*}
+%\end{figure}
+
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\usepackage{verbatim}
+\usepackage{pgfplots}
+
+\pgfplotsset{width=6cm,height=4.5cm,compat=1.9,
+ymin=0,ymax=100,
+}
+
+
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+
+\usetikzlibrary{ matrix,      % For easy node positioning
+                 fit,         % For easily fitting nodes inside another one
+                 positioning, % For easy node-relative placements
+                 calc, 
+                 arrows,shadows,shapes,
+                 decorations.markings,
+                 arrows.meta,chains,
+                 decorations.pathreplacing
+}
+            
+               
+\tikzset{latentnode/.style={draw, minimum width=5mm, shape=circle, ultra thick, black},
+  dagconn/.style={arrows=->, black, thick},
+  plate/.style={draw, shape=rectangle, rounded corners=0.5ex, thin, color=gray!50,
+    minimum width=3.1cm, text width=3.1cm, align=right, inner sep=5pt, inner ysep=5pt,
+    font=\bfseries, text=gray!50,
+    append after command={node[text=gray!50, font=\sffamily\scriptsize, 
+                               below left= -3pt of \tikzlastnode.south east] {#1}}}
+}
+
+\tikzset{
+  barbarrow/.style={ % style that just defines the arrow tip
+     >={Straight Barb[left,length=5pt,width=5pt]}
+  },
+  strike through/.style={
+    postaction=decorate,
+    decoration={
+      markings,
+      mark=at position 0.5 with {
+        \draw[blue,-] (-2pt,-2pt) -- (2pt, 2pt);
+      }
+    }
+  }
+}
+
+               
+% EXEMPLE
+%\begin{tikzpicture}
+%\path (0,0) node(x) {Hello World!}
+%(3,1) node[circle,draw](y) {$\int_1^2 x \mathrm d x$};
+%\draw[->,blue] (x) -- (y);
+%\draw[->,red] (x) -| node[near start,below] {label} (y);
+%\draw[->,orange] (x) .. controls +(up:1cm) and +(left:1cm) .. node[above,sloped] {label} (y);
+%\end{tikzpicture}
+
+\usepackage{chemfig}
+
+\usepackage[american,siunitx]{circuitikz}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\labelitemi}{\footnotesize\textbullet}
+%\input ../e-macros
+%\input ../macros
+   
+\newcommand{\lambdamax}{{\lambda_{\textrm{\tiny max}}}}
+
+\newcommand{\NN}{N_{\ce{Na}}}
+\newcommand{\NK}{N_{\ce{K}}}
+\newcommand{\NL}{N_{\textrm{leak}}}
+
+\newcommand{\NNo}{N_{\ce{Na}}^\textrm{\tiny open}}
+\newcommand{\NKo}{N_{\ce{K}}^\textrm{\tiny open}}
+
+\newcommand{\gN}{g_{\ce{Na}}}
+\newcommand{\gK}{g_{\ce{K}}}
+\newcommand{\gL}{g_{\textrm{leak}}}
+
+\newcommand{\bgN}{\bar g_{\ce{Na}}}
+\newcommand{\bgK}{\bar g_{\ce{K}}}
+\newcommand{\bgL}{\bar g_{\textrm{L}}}
+
+
+\newcommand{\vN}{V_{\ce{Na}}}
+\newcommand{\vK}{V_{\ce{K}}}
+\newcommand{\vL}{V_{\textrm{L}}}
+
+
+\newcommand{\rN}{\rho_{\ce{Na}}}
+\newcommand{\rK}{\rho_{\ce{K}}}
+\newcommand{\rX}{\rho_{\textrm{x}}}
+
+
+\newcommand{\xN}{\xi_{\ce{Na}}}
+\newcommand{\xK}{\xi_{\ce{K}}}
+
+\newcommand{\bxN}{\bar\xi_{\ce{Na}}}
+\newcommand{\bxK}{\bar\xi_{\ce{K}}}
+
+\newcommand{\rhoN}{\rho_{\ce{Na}}}
+\newcommand{\rhoK}{\rho_{\ce{K}}}
+
+
+\newcommand{\Iext}{I_{\textrm{\tiny ext}}}
+
+\newcommand{\vmin}{v_{\textrm{min}}}
+\newcommand{\vmax}{v_{\textrm{max}}}
+
+\newcommand{\QN}{Q^{\ce{Na}}}
+\newcommand{\QK}{Q^{\ce{K}}}
+
+\newcommand{\PN}{P^{\ce{Na}}}
+\newcommand{\PK}{P^{\ce{K}}}
+
+\newcommand{\SN}{\mathcal{S}_{\ce{Na}}}
+\newcommand{\SK}{\mathcal{S}_{\ce{K}}}
+
+\newcommand{\nav}{Na$_{\textrm{V}}$1.1\xspace}
+\newcommand{\INa}	{I_{\text{Na}}}
+\newcommand{\IK}	{I_{\text{K}}}
+\newcommand{\Ileak}	{I_{\text{leak}}}
+\newcommand{\IINa}	{{\cal{I}}_{\text{Na}}}
+\newcommand{\IIK}	{{\cal{I}}_{\text{K}}}
+\newcommand{\IIleak}{{\cal{I}}_{\text{leak}}}
+
+
+\newcommand{\bkappa}{{\boldsymbol{\kappa}}}
+\newcommand{\br}{{\boldsymbol{r}}}
+\newcommand{\bxi}{{\boldsymbol{\xi}}}
+\newcommand{\bbxi}{\bar{\boldsymbol{\xi}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{bold-extra}
+%\renewenvironment{quote}
+%  {\small\list{}{\rightmargin=2.5cm \leftmargin=2.5cm}%
+%   \item\relax}
+%  {\endlist}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FIN PREAMBULE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{
+\color{SecColor}
+Electrophysiological Time Series \\[1em]
+Basic \texttt{Python} tools
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setlength{\baselineskip}{10.5pt plus .15pt minus 0.1pt}
+
+
+\author{Fabien Campillo}
+\date{2024}
+  
+
+%\twocolumn[\maketitle]
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+``Some of the considered methods are: ISIn \cite{bakkum2013a}, ISI Rank
+threshold \cite{hennig2011a}, Max Interval \cite{kirillov2024a}, Cumulative Moving Average \cite{kapucu2012b}, Rank Surprise \cite{gourevitch2007a}, and Poisson Surprise \cite{legendy1985a}. These
+methods only utilize the timestamps at which action
+potentials occur, resulting in a loss of valuable information
+contained in the signal.'' \cite{ardelean2023b}
+
+\nocite{ardelean2023a,muresan2022a,ardelean2023b}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Spikes and bursts detection in membrane potential time series}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------
+\begin{multicols}{2}
+
+
+
+The membrane potential time series of a single neuron exhibits distinct characteristics that differentiate it from macroscopic signals such as EEG. At rest, the membrane potential remains stable at approximately between -70 mV and -60 mV for most neurons, maintained by the balance of ionic currents, particularly potassium (\(\text{K}^+\)) leak channels. However, this resting membrane potential state is subject to fluctuations due to synaptic inputs, leading to small depolarizations or hyperpolarizations, known as excitatory and inhibitory postsynaptic potentials (EPSPs and IPSPs). These fluctuations introduce a degree of stochastic variability to the membrane potential, influenced by synaptic noise and the inherent dynamics of ion channels. Some neurons also exhibit oscillatory activity in specific frequency bands, such as theta or gamma rhythms.
+
+When synaptic inputs drive the membrane potential beyond a threshold, typically around \(-50\) mV, the neuron generates an action potential. This rapid depolarization, lasting approximately \(1-2\) ms, is followed by repolarization and an afterhyperpolarization phase, restoring the membrane to its resting state. Action potentials are all-or-nothing events with a characteristic amplitude of around \(100\) mV and are the primary means of neuronal communication.
+
+After an action potential, the membrane potential may transiently hyperpolarize, a phenomenon known as afterhyperpolarization (AHP), which regulates neuronal excitability and prevents immediate reactivation. The overall pattern of action potentials, or spike train, varies between neurons, with some displaying regular spiking, others firing in bursts, and some exhibiting adaptation, where the firing rate decreases with sustained input.
+
+Beyond immediate electrophysiological responses, neurons also undergo long-term modifications in their activity. One example is spike-timing-dependent plasticity (STDP), where the timing of spikes relative to synaptic inputs leads to changes in synaptic strength. Another example is the slow afterhyperpolarization (sAHP), a prolonged inhibitory effect following intense neuronal activity, which influences excitability over longer timescales.
+
+These features define the electrophysiological behavior of individual neurons and distinguish single-neuron recordings from population-level signals such as EEG, which reflect the summed activity of many neurons rather than the precise dynamics of individual membrane potentials.
+
+\bigskip
+
+The acquisition of membrane potential time series relies on electrophysiological techniques that measure the voltage across the neuronal membrane. One of the most precise methods is \emph{patch-clamp recording}, which uses a glass micropipette filled with electrolyte solution to form a high-resistance seal with the neuronal membrane. This technique enables either \emph{whole-cell recording}, where the pipette establishes electrical continuity with the intracellular space, or \emph{cell-attached recording}, which allows measurement of individual ion channel activity. Another widely used technique is \emph{sharp electrode recording}, in which a fine-tipped microelectrode penetrates the neuron, providing high temporal resolution but potentially causing more damage to the cell.
+
+For in vivo studies, \emph{intracellular recordings} can be performed in living animals, although they are technically challenging due to the movement and complexity of the brain environment. In contrast, \emph{extracellular recordings}, such as single-unit or multi-unit recordings, capture action potentials from nearby neurons without directly measuring membrane potential fluctuations. While these methods provide high spatial and temporal resolution, they do not capture subthreshold membrane potential dynamics.
+
+The acquired time series are typically stored in digital formats compatible with electrophysiological data analysis software. One common format is \emph{Axon Binary Format (ABF)}, used by Molecular Devices' pCLAMP software, which stores voltage signals with high temporal resolution and metadata such as sampling rate and recording parameters. Another widely used format is \emph{Neurodata Without Borders (NWB)}, an open standard designed for sharing electrophysiological data across different labs. Other formats include \emph{HDF5}, which offers a hierarchical structure for organizing large datasets. 
+
+Also, all languages proposed a general purpose binary file format, like MAT files in Matlab, or Python NumPy format npz. Python may handle many formats.
+
+
+These formats are essential for further processing, including spike detection, subthreshold analysis, and synaptic event characterization. Data visualization and analysis are often performed using specialized software such as Clampfit, Spike2, and open-source tools like Python libraries (**Neo**, **Elephant**) or MATLAB scripts.
+
+\end{multicols}
+%----------------------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{File Formats in Electrophysiology}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------
+\begin{multicols}{2}
+
+
+The development of electrophysiology file formats has been closely linked to technological advancements in signal acquisition, data storage, and computational neuroscience. 
+
+\medskip
+
+
+\subsubsection*{1980s: emergence of digital signal acquisition}
+
+In the 1980s, the emergence of digital signal acquisition led to the development of early digital storage methods and proprietary formats. These formats were designed to store voltage traces and spike train data, enabling the recording and analysis of electrophysiological signals within specialized systems. Among them:
+\begin{itemize}
+
+\item
+{1981: Axon Binary Format (ABF, \texttt{.abf})}  
+Developed by Axon Instruments (now part of Molecular Devices), ABF became a standard for patch-clamp and intracellular recordings using pCLAMP software.
+
+\item
+{1987: European Data Format (EDF, \texttt{.edf})}  
+Created for polysomnography and EEG, EDF introduced a standard format for clinical neurophysiology recordings.
+
+\item
+
+{Late 1980s: Spike2 Format (\texttt{.smr}, \texttt{.sps})}  
+Cambridge Electronic Design (CED) developed this format for their electrophysiology acquisition systems, supporting spike trains and continuous signals.
+\end{itemize}
+
+
+\subsubsection*{1990s: emergence of digital signal acquisition}
+
+
+In the 1990s, with the expansion of electrophysiology research, new data formats were developed to accommodate multi-channel recordings and high-speed acquisitions. This period also marked the initial efforts toward standardization, aiming to improve data interoperability and accessibility across different acquisition systems.
+
+
+\textbf{1995: MATLAB Format (MAT, \texttt{.mat})}  
+MathWorks introduced \texttt{.mat} files, widely adopted by neuroscientists for storing and analyzing electrophysiological data.
+
+\textbf{1996: Technical Data Management Streaming (TDMS, \texttt{.tdms})}  
+National Instruments developed TDMS for high-speed data acquisition with LabVIEW, supporting large-scale electrophysiological recordings.
+
+\textbf{1998: NeuroExplorer Format (\texttt{.nex}, \texttt{.nex5})}  
+Introduced by NeuroExplorer, this format facilitated spike train analysis and time-series storage.
+
+\subsection*{2000s: Open Formats and Cross-Compatibility}
+Efforts to create open, standardized file formats increased to improve data sharing and reproducibility.
+
+\textbf{2003: Biosemi Data Format (BDF, \texttt{.bdf})}  
+An extension of EDF, designed to support higher-resolution EEG recordings.
+
+\textbf{2005: Neuroshare API}  
+Developed as an open API to enable compatibility between different proprietary electrophysiology file formats.
+
+\textbf{2007: Hierarchical Data Format 5 (HDF5, \texttt{.h5})}  
+While not specific to electrophysiology, HDF5 gained popularity for large-scale neural data storage due to its hierarchical structure and compression capabilities.
+
+\subsection*{2010s: Standardization for Data Sharing and Open Science}
+With increasing data complexity, new formats were designed to support large datasets and metadata integration.
+
+\textbf{2014: Neurodata Without Borders (NWB, \texttt{.nwb})}  
+Developed by the Allen Institute and other research groups, NWB provides a standardized format for electrophysiology, supporting intracellular, extracellular, and behavioral data.
+
+\textbf{2016: Python Integration for Electrophysiology}  
+The rise of Python-based tools (e.g., \texttt{pyABF}, \texttt{Neo}, \texttt{pynwb}) enabled easier access to electrophysiological formats.
+
+\subsection*{2020s: AI-Driven Analysis and Cloud-Based Storage}
+Current trends focus on formats optimized for machine learning, cloud storage, and interoperability.
+
+\textbf{Ongoing: Adoption of HDF5-based Standards}  
+NWB and other HDF5-based formats are becoming the preferred choice for large-scale electrophysiology projects.
+
+\textbf{Emerging: Cloud-Compatible Formats}  
+New developments aim to support real-time streaming and large-scale data sharing in neuroscience.
+
+\section*{Conclusion}
+The evolution of electrophysiology file formats reflects the increasing complexity of neural data and the need for open, standardized solutions. While proprietary formats like ABF and TDMS remain widely used due to hardware constraints, open formats like NWB and HDF5 are becoming the standard for large-scale neuroscience projects.
+
+
+xxxxxx
+
+
+Electrophysiological data is stored in various formats, depending on the acquisition system, analysis requirements, and compatibility with different software. The main formats include both open and proprietary solutions.
+
+\subsection*{1. Neurodata Without Borders (NWB, \texttt{.nwb})}
+NWB is an open, standardized format designed for neurophysiology data sharing. It supports various data types, including extracellular and intracellular recordings, behavioral data, and metadata.
+
+\textbf{Key features:}  
+- Hierarchical structure based on HDF5.  
+- Rich metadata support.  
+- Used with the \texttt{pynwb} Python library.
+
+\textbf{Related to:} Open standard for neuroscience, supported by the Allen Institute for Brain Science.
+
+\subsection*{2. Axon Binary Format (ABF, \texttt{.abf})}
+The ABF format is used by Axon Instruments (now part of Molecular Devices) for storing electrophysiological recordings obtained with their patch-clamp amplifiers and software like pCLAMP.
+
+\textbf{Key features:}  
+- Optimized for intracellular and whole-cell patch-clamp recordings.  
+- Binary format with metadata storage.  
+- Can be read using the \texttt{pyABF} Python package.
+
+\textbf{Related to:} Axon Instruments, Molecular Devices.
+
+\subsection*{3. HDF5 (\texttt{.h5})}
+HDF5 (Hierarchical Data Format) is a general-purpose format widely adopted in neuroscience for large datasets due to its flexibility and efficiency.
+
+\textbf{Key features:}  
+- Supports structured storage of time-series data, metadata, and multi-modal recordings.  
+- Efficient for large datasets with compression.  
+- Used in high-performance computing and machine learning.
+
+\textbf{Related to:} Open standard, used in NWB and various custom applications.
+
+\subsection*{4. MATLAB Format (MAT, \texttt{.mat})}
+MAT files are commonly used in neurophysiology for storing electrophysiological data due to MATLAB's widespread adoption in neuroscience.
+
+\textbf{Key features:}  
+- Stores numerical arrays, structs, and time-series data.  
+- Easily readable in MATLAB and Python (\texttt{scipy.io.loadmat}).  
+
+\textbf{Related to:} MathWorks MATLAB.
+
+\subsection*{5. European Data Format (EDF, \texttt{.edf})}
+EDF is widely used in sleep studies, EEG, and other physiological recordings. The BDF (Biosemi Data Format) is an extension of EDF.
+
+\textbf{Key features:}  
+- Plain text header with binary data storage.  
+- Compatible with various analysis tools such as EEGLAB.  
+- Used in clinical and research settings.
+
+\textbf{Related to:} Open standard, supported by multiple EEG acquisition systems.
+
+\subsection*{6. Technical Data Management Streaming (TDMS, \texttt{.tdms})}
+TDMS is a format developed by National Instruments for high-speed data acquisition.
+
+\textbf{Key features:}  
+- Optimized for large-scale time-series data.  
+- Used in LabVIEW for real-time signal acquisition.  
+- Supports metadata storage.
+
+\textbf{Related to:} National Instruments, LabVIEW.
+
+\subsection*{7. NeuroExplorer Format (\texttt{.nex}, \texttt{.nex5})}
+Proprietary format used in NeuroExplorer software for spike train and continuous signal analysis.
+
+\textbf{Key features:}  
+- Supports spike times, continuous signals, and event markers.  
+- Used for single-neuron and multi-unit recordings.
+
+\textbf{Related to:} NeuroExplorer software.
+
+\subsection*{8. Spike2 Format (\texttt{.smr}, \texttt{.sps})}
+Spike2 is a format developed by Cambridge Electronic Design (CED) for electrophysiological recordings.
+
+\textbf{Key features:}  
+- Stores spike trains, analog signals, and event markers.  
+- Compatible with CED acquisition hardware.
+
+\textbf{Related to:} Cambridge Electronic Design (CED).
+
+\subsection*{9. CSV/TSV (\texttt{.csv}, \texttt{.tsv})}
+While not designed specifically for electrophysiology, comma-separated and tab-separated values are sometimes used for storing raw or processed time-series data.
+
+\textbf{Key features:}  
+- Plain text format, easy to share and edit.  
+- Limited metadata support.  
+- Used for exporting processed signals.
+
+\textbf{Related to:} General-purpose, readable in Python, MATLAB, and Excel.
+
+\subsection*{10. Neuroshare-compatible Formats}
+Neuroshare is an API that supports multiple proprietary file formats used by different acquisition systems.
+
+\textbf{Key features:}  
+- Allows cross-platform compatibility between acquisition systems.  
+- Supports multiple commercial hardware solutions.
+
+\textbf{Related to:} Various neurophysiology software and acquisition systems.
+
+\section*{Conclusion}
+The choice of file format depends on the specific needs of the experiment, including data size, metadata requirements, and compatibility with analysis tools. While NWB and HDF5 are emerging as standardized solutions, proprietary formats like ABF, TDMS, and EDF remain common due to their association with specific hardware and software.
+
+
+
+\end{multicols}
+%----------------------------------------------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Basic packages and formats in Python}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------
+\begin{multicols}{2}
+
+In Python, an efficient and structured way to store electrophysiological data in a portable format is the \textbf{NumPy \texttt{.npz} format}. This format is well-suited for handling large datasets, as it allows multiple NumPy arrays to be stored in a single file using gzip compression, ensuring both efficient storage and quick retrieval. Data can be saved the following way:
+\begin{lstlisting}
+import numpy as np
+np.savez("membrane_potential.npz", time=time_array, voltage=voltage_array)
+\end{lstlisting}
+and loaded the following way:
+\begin{lstlisting}
+data = np.load("membrane_potential.npz")
+time = data["time"]
+voltage = data["voltage"]
+\end{lstlisting}
+
+\section*{HDF5 (\texttt{.h5}) Format using \texttt{h5py}}
+
+HDF5 is a hierarchical data format that allows efficient storage and retrieval of large datasets.
+
+\textbf{Example of saving data:}
+
+\begin{lstlisting}
+import h5py
+import numpy as np
+with h5py.File("membrane_potential.h5", "w") as f:
+    f.create_dataset("time", data=np.array(time_array))
+    f.create_dataset("voltage", data=np.array(voltage_array))
+\end{lstlisting}
+
+\textbf{Example of loading data:}
+
+\begin{lstlisting}
+with h5py.File("membrane_potential.h5", "r") as f:
+    time = f["time"][:]
+    voltage = f["voltage"][:]
+\end{lstlisting}
+
+\section*{Neo + NWB (Neurodata Without Borders)}
+
+Neo is a Python library for handling electrophysiological data, supporting multiple file formats. NWB is a standardized format designed specifically for neurophysiology.
+
+\textbf{Example of using Neo:}
+
+\begin{lstlisting}
+from neo.io import AxonIO
+reader = AxonIO(filename="example.abf")
+block = reader.read_block()
+\end{lstlisting}
+
+\textbf{Example of saving to NWB:}
+
+\href{https://www.nwb.org}{Neurodata Without Borders (NWB)} is a data standard for neurophysiology, providing neuroscientists with a common standard to share, archive, use, and build analysis tools for neurophysiology data. 
+
+\begin{lstlisting}
+from pynwb import NWBHDF5IO
+io = NWBHDF5IO("data.nwb", "w")
+io.write(nwbfile)
+io.close()
+\end{lstlisting}
+
+For general-purpose storage, \textbf{HDF5} is the closest Python equivalent to MATLAB's \texttt{.mat} format, while \textbf{NWB} is the best option for electrophysiology-specific storage.
+
+
+
+
+\end{multicols}
+%----------------------------------------------------------------------
+
+
+\clearpage
+
+
+\cite{kass2023a} 
+
+
+\url{https://goodresearch.dev} \fcite{mineault2021a}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Burst and Global Neuronal Activity in the Lateral Habenular Complex (LHb)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The lateral habenular complex (LHb) plays a crucial role in regulating mood, motivation, and decision-making, particularly through its influence on reward and aversion processing. Researchers study specific neuronal activity patterns, including \textbf{bursting activity}, as these patterns are associated with distinct physiological and pathological states.
+
+\subsection{Types of Bursts in LHb Neurons}
+\textbf{High-Frequency Bursts:}
+\begin{itemize}
+    \item \textbf{Definition:} Bursts characterized by rapid, clustered action potentials.
+    \item \textbf{Significance:} Correlates with aversive stimuli, stress, or negative emotional states.
+    \item \textbf{Mechanism:}
+    \begin{itemize}
+        \item Triggered by hyperpolarization-activated cyclic nucleotide-gated (HCN) channels and T-type calcium channels.
+        \item Calcium influx during bursts modulates downstream signaling, enhancing excitatory output.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Global Neuronal Activity Patterns in LHb}
+\textbf{Tonic Firing:}
+\begin{itemize}
+    \item \textbf{Definition:} Regular, single-spike activity without bursts.
+    \item \textbf{Significance:} Represents baseline activity and homeostatic regulation of LHb output.
+    \item \textbf{Associated States:} Observed during neutral conditions and balanced neural states.
+\end{itemize}
+
+\textbf{Burst-Tonic Transitions:}
+\begin{itemize}
+    \item \textbf{Definition:} Switching between burst firing and tonic firing modes.
+    \item \textbf{Significance:} Modulates how the LHb encodes reward-prediction errors and aversion signals.
+\end{itemize}
+
+\subsection{Pathological Bursting in LHb}
+\textbf{Hyperactive Bursting:}
+\begin{itemize}
+    \item \textbf{Observed in:} Depression, anxiety, and addiction.
+    \item \textbf{Mechanisms:}
+    \begin{itemize}
+        \item \textbf{Excitatory Drive:} Overactivation of glutamatergic input.
+        \item \textbf{Reduced Inhibition:} Dysfunction of GABAergic interneurons.
+        \item \textbf{Intrinsic Properties:} Increased excitability due to alterations in ion channel function (e.g., enhanced HCN channel activity).
+    \end{itemize}
+    \item \textbf{Impact:} Leads to hyperactivity in downstream structures like the \textit{rostromedial tegmental nucleus (RMTg)}, inhibiting dopaminergic activity in the ventral tegmental area (VTA) and contributing to anhedonia.
+\end{itemize}
+
+\textbf{Silent States:}
+\begin{itemize}
+    \item \textbf{Definition:} Periods of suppressed activity or reduced firing rates.
+    \item \textbf{Associated Disorders:} Observed in conditions where reward-related signaling is dampened, leading to motivational deficits.
+\end{itemize}
+
+\subsection{LHb and Neuromodulation}
+LHb activity is regulated by multiple neuromodulators, influencing its burst dynamics:
+\begin{itemize}
+    \item \textbf{Dopamine:} Modulates reward-prediction error signaling and burst firing.
+    \item \textbf{Serotonin:} Influences LHb response to stress and aversive stimuli.
+    \item \textbf{Orexin:} Alters excitability and activity patterns in arousal-related contexts.
+\end{itemize}
+
+\subsection{Functional Implications of LHb Bursting}
+\textbf{Reward and Aversion Encoding:}
+\begin{itemize}
+    \item LHb neurons encode negative reward-prediction errors (e.g., unexpected absence of reward).
+    \item High-frequency bursts correlate with aversion and stress-related signaling, suppressing dopaminergic activity in the VTA.
+\end{itemize}
+
+\textbf{Role in Depression:}
+\begin{itemize}
+    \item Hyperactivity of LHb bursting is implicated in depressive behaviors, linked to increased aversion and reduced motivation.
+    \item Experimental models show that reducing LHb bursting activity (e.g., via optogenetic or pharmacological interventions) alleviates depressive-like behaviors.
+\end{itemize}
+
+\textbf{Role in Addiction:}
+\begin{itemize}
+    \item Abnormal LHb bursting is associated with altered reward processing in substance use disorders, contributing to maladaptive behaviors and relapses.
+\end{itemize}
+
+\textbf{Pain Processing:}
+\begin{itemize}
+    \item LHb bursts are involved in encoding pain-related aversive signals, influencing affective responses to pain.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Neuronal activity patterns in the LHb, particularly bursting dynamics, are pivotal in regulating affective and motivational states. These patterns are tightly linked to conditions such as depression, addiction, and stress-related disorders. The LHb's central role in aversion and reward pathways makes it a key target for therapies aimed at modulating its activity (e.g., deep brain stimulation or optogenetics).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tonic Regular vs. Tonic Irregular Firing in Neurons}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the context of neuronal activity, particularly in the lateral habenular complex (LHb), the terms \textbf{tonic regular} and \textbf{tonic irregular} describe distinct patterns of neuronal firing. These patterns are characterized as follows:
+
+\subsection{Tonic Regular}
+\begin{itemize}
+    \item Refers to a consistent and predictable firing pattern of action potentials.
+    \item Neurons fire at relatively regular intervals, with little variation in the interspike interval (ISI).
+    \item The regularity in timing is often attributed to stable intrinsic membrane properties or consistent synaptic inputs.
+    \item Typically associated with a steady signaling state, such as during baseline activity.
+\end{itemize}
+
+\subsection{Tonic Irregular}
+\begin{itemize}
+    \item Refers to a tonic firing pattern where the timing of action potentials is less predictable.
+    \item Neurons fire at variable intervals, resulting in a broader distribution of ISI compared to tonic regular firing.
+    \item This irregularity may arise from fluctuating synaptic inputs, intrinsic membrane noise, or variability in network influences.
+    \item Often reflects a state where the neuron is integrating diverse or inconsistent input signals.
+\end{itemize}
+
+\subsection{Key Differences}
+The key differences between these two firing patterns are summarized in the table below:
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspect}              & \textbf{Tonic Regular}       & \textbf{Tonic Irregular}      \\ \hline
+\textbf{Firing Consistency}  & Highly regular ISI           & Variable ISI                  \\ \hline
+\textbf{Signal Timing}       & Predictable spike intervals  & Unpredictable spike intervals \\ \hline
+\textbf{Influence Source}    & Stable intrinsic properties  & Fluctuating inputs/noise      \\ \hline
+\textbf{Functional Implication} & Steady-state signaling       & Flexible or adaptive processing \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Functional Implications}
+Tonic regular firing may be indicative of stable, ongoing signaling, whereas tonic irregular firing could reflect the integration or processing of dynamic or inconsistent inputs. Both patterns are critical for understanding how the LHb encodes information and influences downstream targets, particularly in behaviors or states related to mood, reward, and aversion.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Types of Bursts in the Lateral Habenular Complex (LHb)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the lateral habenular complex (LHb), neuronal activity exhibits various firing patterns, including bursts. Bursting is a critical mode of neuronal signaling that conveys specific information to downstream targets. Different types of bursts observed in the LHb can be characterized as follows:
+
+\subsection{Phasic Bursts}
+\begin{itemize}
+    \item \textbf{Definition:} Short episodes of rapid spiking activity interspersed with periods of quiescence or tonic firing.
+    \item \textbf{Properties:}
+        \begin{itemize}
+            \item High-frequency spikes within a brief time window.
+            \item Often triggered by sudden synaptic inputs or intrinsic depolarization.
+        \end{itemize}
+    \item \textbf{Functional Role:} 
+        \begin{itemize}
+            \item Encodes specific, time-sensitive signals such as salient sensory or behavioral events.
+            \item Can signal aversive stimuli or modulate downstream reward-related circuits.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Tonic Bursts}
+\begin{itemize}
+    \item \textbf{Definition:} Prolonged sequences of bursts with interspersed spikes, occurring over an extended duration.
+    \item \textbf{Properties:}
+        \begin{itemize}
+            \item Lower intraburst frequency compared to phasic bursts.
+            \item May be modulated by intrinsic rhythmic properties of the neuron.
+        \end{itemize}
+    \item \textbf{Functional Role:} 
+        \begin{itemize}
+            \item Associated with sustained signaling during certain behavioral or emotional states.
+            \item May contribute to long-lasting modulations of neural circuits.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Irregular Bursts}
+\begin{itemize}
+    \item \textbf{Definition:} Bursts with variable spike timing and inconsistent patterns.
+    \item \textbf{Properties:}
+        \begin{itemize}
+            \item Unpredictable intervals between spikes within bursts.
+            \item May result from fluctuating synaptic inputs or dynamic network activity.
+        \end{itemize}
+    \item \textbf{Functional Role:} 
+        \begin{itemize}
+            \item Reflects integration of diverse or inconsistent inputs.
+            \item May represent a flexible coding strategy for processing complex information.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Pathological Bursts}
+\begin{itemize}
+    \item \textbf{Definition:} Bursts associated with abnormal or dysfunctional activity in LHb neurons.
+    \item \textbf{Properties:}
+        \begin{itemize}
+            \item Can be excessively long, frequent, or occur in atypical contexts.
+            \item Often linked to disrupted neural homeostasis or pathological conditions.
+        \end{itemize}
+    \item \textbf{Functional Role:} 
+        \begin{itemize}
+            \item Correlated with maladaptive states such as depression, stress, or addiction.
+            \item Disrupts normal LHb signaling and its interactions with reward or aversion pathways.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Summary}
+These distinct burst types in the LHb serve diverse functional roles, from encoding specific behavioral signals to sustaining neural activity during prolonged states. The study of LHb bursting patterns is essential for understanding its contributions to mood regulation, aversion processing, and pathological conditions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Classical Burst Detection Technique}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The classical burst detection technique, introduced by Kleinberg (2002), is a probabilistic model used to identify "bursts" in streams of discrete events (e.g., word occurrences in a document or time-series data). The method is based on the idea that bursts are periods of increased activity or frequency relative to the baseline.
+
+\subsection{Key Concepts and Notation}
+Let:
+\begin{itemize}
+    \item $t_1, t_2, \dots, t_N$: The sequence of event times in chronological order.
+    \item $T$: The total duration of observation.
+    \item $\lambda$: The baseline rate of events (average rate in the absence of bursts).
+    \item $k$: The state of activity, where $k = 0$ represents the baseline and $k > 0$ indicates burst states.
+    \item $\gamma$: The cost parameter controlling the transition between states.
+\end{itemize}
+
+\subsection{Model Framework}
+The method uses a finite-state automaton to model the occurrence of bursts. Each state $k$ corresponds to a different intensity level of activity. The main components of the framework are as follows:
+
+\subsubsection{Event Intensity}
+Each state $k$ is associated with a Poisson process, where the event rate is proportional to the state:
+\[
+\text{Rate in state } k: \lambda_k = \lambda \cdot r^k,
+\]
+where $r > 1$ is the burst amplification factor.
+
+\subsubsection{Transition Cost}
+Transitions between states are penalized to prevent frequent state changes. The cost of transitioning from state $k_1$ to $k_2$ is defined as:
+\[
+C(k_1 \to k_2) = \gamma \cdot |k_1 - k_2|.
+\]
+
+\subsubsection{Optimization Problem}
+The goal is to find the sequence of states $\{k_1, k_2, \dots, k_N\}$ that minimizes the total cost:
+\[
+\text{Total Cost} = \sum_{i=1}^N \left[ -\log P(t_i | k_i) + C(k_{i-1} \to k_i) \right],
+\]
+where $P(t_i | k_i)$ is the probability of observing the event $t_i$ given state $k_i$.
+
+\subsection{Dynamic Programming Solution}
+The optimization problem is solved using dynamic programming. Define $F(i, k)$ as the minimum cost of explaining the first $i$ events, ending in state $k$. The recurrence relation is:
+\[
+F(i, k) = \min_{k'} \left[ F(i-1, k') + C(k' \to k) - \log P(t_i | k) \right],
+\]
+where $P(t_i | k)$ is derived from the Poisson distribution:
+\[
+P(t_i | k) = \lambda_k \exp(-\lambda_k \Delta t_i),
+\]
+and $\Delta t_i = t_i - t_{i-1}$ is the inter-event time.
+
+\subsection{Applications}
+This method has been widely applied in:
+\begin{itemize}
+    \item Text analysis for identifying bursts of topic-specific words.
+    \item Network traffic analysis to detect anomalous periods.
+    \item Event detection in temporal datasets.
+\end{itemize}
+
+\subsection{Reference}
+Kleinberg, J. (2002). ``Bursty and Hierarchical Structure in Streams.'' In \emph{Proceedings of the 8th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}, pp. 91--101.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Advanced Burst Detection: Spike Events and Voltage Dynamics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Burst detection techniques can be extended to continuous signals, such as voltage traces, by combining spike-event analysis with the assessment of signal features like amplitude and dynamics. This approach is particularly useful in applications like neuroscience, where bursts of activity in voltage traces can carry significant functional meaning.
+
+\subsection{Definition of a Burst}
+A burst can be identified based on two criteria:
+\begin{enumerate}
+    \item \textbf{Spike Timing:} A sequence of spikes occurring within a short time window.
+    \item \textbf{Voltage Dynamics:} The voltage signal during the burst satisfies specific conditions, such as:
+    \begin{itemize}
+        \item The \textbf{minimum voltage} during the burst is higher than the baseline voltage before and after the burst.
+        \item The \textbf{average voltage} during the burst exceeds the baseline voltage.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Mathematical Framework}
+Let $V(t)$ represent the voltage signal as a function of time, and $t_1, t_2, \dots, t_N$ represent the spike times within the burst. The following criteria can be used to detect a burst:
+
+\subsubsection{Spike-Based Detection}
+Define a burst as a sequence of spikes where the inter-spike interval $\Delta t_i = t_{i+1} - t_i$ satisfies:
+\[
+\Delta t_i < T_{\text{max}},
+\]
+where $T_{\text{max}}$ is a predefined maximum inter-spike interval.
+
+\subsubsection{Voltage Thresholding}
+For a candidate burst period $[t_{\text{start}}, t_{\text{end}}]$, the voltage dynamics are analyzed:
+\begin{itemize}
+    \item \textbf{Minimum Voltage Criterion:}
+    \[
+    \min_{t \in [t_{\text{start}}, t_{\text{end}}]} V(t) > \mu_{\text{baseline}} - \sigma_{\text{baseline}},
+    \]
+    where $\mu_{\text{baseline}}$ and $\sigma_{\text{baseline}}$ are the mean and standard deviation of the voltage in a baseline period before the burst.
+
+    \item \textbf{Average Voltage Criterion:}
+    \[
+    \frac{1}{t_{\text{end}} - t_{\text{start}}} \int_{t_{\text{start}}}^{t_{\text{end}}} V(t) \, dt > \mu_{\text{baseline}}.
+    \]
+\end{itemize}
+
+\subsubsection{Combined Criteria}
+A period qualifies as a burst if both the spike and voltage criteria are met. Formally:
+\[
+\text{Burst detected if: }
+\begin{cases} 
+    \Delta t_i < T_{\text{max}}, & \forall i \text{ in the burst,} \\
+    \min V(t) > \mu_{\text{baseline}} - \sigma_{\text{baseline}}, & \text{and} \\
+    \frac{1}{t_{\text{end}} - t_{\text{start}}} \int_{t_{\text{start}}}^{t_{\text{end}}} V(t) \, dt > \mu_{\text{baseline}}.
+\end{cases}
+\]
+
+\subsection{Algorithm for Burst Detection}
+The process for detecting bursts can be summarized as follows:
+\begin{enumerate}
+    \item Identify candidate burst periods based on spike timing criteria.
+    \item For each candidate period:
+    \begin{enumerate}
+        \item Compute the minimum voltage and compare it to the baseline.
+        \item Compute the average voltage during the period and compare it to the baseline.
+    \end{enumerate}
+    \item Retain periods that satisfy all criteria.
+\end{enumerate}
+
+\subsection{Applications}
+This extended burst detection framework can be applied to:
+\begin{itemize}
+    \item \textbf{Neuroscience:} Analysis of neural activity patterns in electrophysiology recordings.
+    \item \textbf{Signal Processing:} Detection of transient signal events in continuous data.
+    \item \textbf{Event Detection:} Identification of bursts in time-series data where both event timing and signal dynamics matter.
+\end{itemize}
+
+\subsection{Example Visualization}
+To visualize bursts, plot $V(t)$ alongside detected bursts marked with shaded regions or annotations. Use tools like Python's \texttt{matplotlib} or MATLAB for implementation.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Beyond spike events}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Yes, there are studies about burst detection and analysis that go beyond just analyzing spike events. Some research examines the voltage patterns before and after bursts, including comparisons of burst voltage to pre- and post-burst voltage levels.
+
+One study investigated the voltage of neurons preceding and during bursting using intracellular recordings to determine the electrophysiological signature of particular types of bursts3. This approach can provide insights into the mechanisms driving bursting activity and potentially suggest drug targets for therapeutic intervention.
+
+Another study analyzed changes in firing activity before and after bursts, indicating that researchers are interested in the broader context surrounding burst events4. This research examined "burst related spikes," which include pre-burst spikes and burst tails, demonstrating that the activity immediately preceding and following bursts is considered an essential part of bursting behavior.
+
+Additionally, some researchers have developed more comprehensive burst detection algorithms that consider various aspects of neuronal activity. For example, one study proposed a firing statistics-based algorithm that utilizes interspike interval (ISI) histograms and calculates thresholds for burst spikes, pre-burst spikes, and burst tails4. This approach allows for a more nuanced analysis of bursting activity, including the periods immediately before and after the main burst event.
+
+While the specific criterion of comparing the minimum voltage during the burst to the mean voltage before and after the burst is not explicitly mentioned in these search results, the studies indicate a trend towards more comprehensive analysis of bursting activity, including the surrounding periods. This suggests that researchers are indeed looking beyond simple spike event analysis to understand the full context and characteristics of neuronal bursts.
+
+\fcite{kapucu2012b}
+
+\fcite{valkki2017a}
+
+\fcite{cotterill2016a}
+
+\fcite{ardelean2023b}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Burst Detection with Voltage Patterns: Pre- and Post-Burst Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In addition to detecting bursts based on spikes and intra-burst voltage dynamics, it is often useful to analyze the voltage patterns \emph{before} and \emph{after} bursts. This approach helps in understanding the contextual dynamics of bursts and their relationship to baseline voltage levels.
+
+\subsection{Definition of Voltage Patterns Around Bursts}
+Let $V(t)$ represent the continuous voltage signal as a function of time. A burst occurs within the interval $[t_{\text{start}}, t_{\text{end}}]$. The following regions are defined for analysis:
+\begin{itemize}
+    \item \textbf{Pre-Burst Period:} $[t_{\text{start}} - T_{\text{pre}}, t_{\text{start}}]$
+    \item \textbf{Post-Burst Period:} $[t_{\text{end}}, t_{\text{end}} + T_{\text{post}}]$
+    \item \textbf{Burst Period:} $[t_{\text{start}}, t_{\text{end}}]$
+\end{itemize}
+Here, $T_{\text{pre}}$ and $T_{\text{post}}$ are the durations of the pre-burst and post-burst periods, respectively.
+
+\subsection{Voltage Metrics for Comparison}
+The following metrics are used to compare voltage patterns across the three periods:
+
+\subsubsection{Average Voltage}
+The average voltage in each period is computed as:
+\[
+\mu_{\text{period}} = \frac{1}{T_{\text{period}}} \int_{t_{\text{start}}}^{t_{\text{end}}} V(t) \, dt,
+\]
+where $T_{\text{period}}$ is the duration of the respective period.
+
+\subsubsection{Voltage Fluctuations}
+The standard deviation of the voltage in each period is:
+\[
+\sigma_{\text{period}} = \sqrt{\frac{1}{T_{\text{period}}} \int_{t_{\text{start}}}^{t_{\text{end}}} \left(V(t) - \mu_{\text{period}}\right)^2 \, dt}.
+\]
+
+\subsubsection{Minimum and Maximum Voltages}
+The minimum and maximum voltages are:
+\[
+V_{\text{min, period}} = \min_{t \in \text{period}} V(t), \quad V_{\text{max, period}} = \max_{t \in \text{period}} V(t).
+\]
+
+\subsection{Criteria for Contextual Burst Validation}
+A burst is validated based on comparisons between the burst voltage and pre-/post-burst voltages:
+\begin{itemize}
+    \item \textbf{Average Voltage Criterion:}
+    \[
+    \mu_{\text{burst}} > \mu_{\text{pre-burst}} \quad \text{and/or} \quad \mu_{\text{burst}} > \mu_{\text{post-burst}}.
+    \]
+    \item \textbf{Minimum Voltage Criterion:}
+    \[
+    V_{\text{min, burst}} > \mu_{\text{pre-burst}} - \sigma_{\text{pre-burst}}.
+    \]
+    \item \textbf{Fluctuation Comparison:}
+    Compare the standard deviations:
+    \[
+    \sigma_{\text{burst}} > \sigma_{\text{pre-burst}} \quad \text{or} \quad \sigma_{\text{burst}} > \sigma_{\text{post-burst}},
+    \]
+    to assess the relative signal variability during the burst.
+\end{itemize}
+
+\subsection{Pre- and Post-Burst Dynamics}
+Analyzing voltage dynamics before and after bursts provides insights into the transitions surrounding bursts:
+\begin{itemize}
+    \item Check for \emph{rising trends} in voltage leading into the burst:
+    \[
+    V(t_{\text{start}}) > \mu_{\text{pre-burst}}.
+    \]
+    \item Examine whether voltage returns to baseline after the burst:
+    \[
+    \mu_{\text{post-burst}} \approx \mu_{\text{pre-burst}}.
+    \]
+    \item Assess any overshoots or undershoots following the burst:
+    \[
+    V_{\text{max, post-burst}} \quad \text{and} \quad V_{\text{min, post-burst}}.
+    \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Example Analysis Workflow}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The workflow for incorporating pre- and post-burst analysis is:
+\begin{enumerate}
+    \item Detect candidate bursts based on spike timing or intra-burst voltage thresholds.
+    \item Compute voltage metrics ($\mu$, $\sigma$, $V_{\text{min}}$, $V_{\text{max}}$) for pre-burst, burst, and post-burst periods.
+    \item Compare burst metrics to pre- and post-burst metrics using defined criteria.
+    \item Visualize the voltage trace, marking bursts, and overlay metrics for intuitive understanding.
+\end{enumerate}
+
+\subsection{Applications}
+Analyzing voltage patterns before and after bursts is beneficial for:
+\begin{itemize}
+    \item \textbf{Neuroscience:} Understanding excitability and recovery mechanisms in neural circuits.
+    \item \textbf{Signal Processing:} Identifying precursors or after-effects of transient events in continuous data.
+    \item \textbf{Event Detection:} Characterizing signal behavior leading into and out of bursts.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Burst Dynamics: Intra-Burst Spike Frequency Variation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+During bursts, the frequency of spike events may vary, reflecting dynamic processes such as neural adaptation, facilitation, or inhibition. Understanding these variations is critical for characterizing burst structure and its functional significance.
+
+\subsection{Spike Frequency Analysis}
+Let $t_1, t_2, \dots, t_N$ denote the times of spikes occurring during a burst in the interval $[t_{\text{start}}, t_{\text{end}}]$. The instantaneous spike frequency at time $t_i$ is defined as:
+\[
+f(t_i) = \frac{1}{\Delta t_i}, \quad \Delta t_i = t_{i+1} - t_i,
+\]
+where $\Delta t_i$ is the inter-spike interval (ISI).
+
+\subsubsection{Average Spike Frequency}
+The average spike frequency during the burst is:
+\[
+f_{\text{avg}} = \frac{N-1}{t_{\text{end}} - t_{\text{start}}}.
+\]
+
+\subsubsection{Frequency Variation Metrics}
+To quantify variations in frequency during the burst:
+\begin{itemize}
+    \item \textbf{Frequency Standard Deviation:}
+    \[
+    \sigma_f = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N-1} \left(f(t_i) - f_{\text{avg}}\right)^2}.
+    \]
+    \item \textbf{Frequency Slope:} Measure the rate of change in frequency across the burst:
+    \[
+    m_f = \frac{f(t_N) - f(t_1)}{t_N - t_1}.
+    \]
+    A positive slope indicates an accelerating burst, while a negative slope indicates deceleration.
+\end{itemize}
+
+\subsection{Models of Intra-Burst Frequency Variation}
+Several models describe the variation in spike frequency during bursts:
+\begin{itemize}
+    \item \textbf{Exponential Decay Model:}
+    Spike frequency decreases exponentially during the burst due to adaptation:
+    \[
+    f(t) = f_0 \exp(-\alpha (t - t_{\text{start}})),
+    \]
+    where $f_0$ is the initial frequency, and $\alpha$ is the decay constant.
+    \item \textbf{Linear Decay or Growth:}
+    Spike frequency changes linearly:
+    \[
+    f(t) = f_0 + \beta (t - t_{\text{start}}),
+    \]
+    where $\beta$ is the rate of change in frequency.
+    \item \textbf{Oscillatory Patterns:}
+    Some bursts exhibit oscillations in frequency, modeled as:
+    \[
+    f(t) = f_0 \left(1 + A \sin(2 \pi \omega t + \phi)\right),
+    \]
+    where $A$ is the amplitude, $\omega$ is the angular frequency, and $\phi$ is the phase.
+\end{itemize}
+
+\subsection{Analysis Workflow}
+To analyze intra-burst spike frequency variations:
+\begin{enumerate}
+    \item \textbf{Detect Spikes:} Identify the times of spikes within bursts.
+    \item \textbf{Compute Frequencies:} Calculate $f(t_i)$ for each spike using inter-spike intervals.
+    \item \textbf{Fit Models:} Fit appropriate models (e.g., exponential, linear) to the frequency data.
+    \item \textbf{Compare Metrics:} Evaluate metrics such as $f_{\text{avg}}$, $\sigma_f$, and $m_f$.
+\end{enumerate}
+
+\subsection{Applications}
+Intra-burst frequency analysis is widely used in:
+\begin{itemize}
+    \item \textbf{Neuroscience:} Understanding synaptic plasticity, network dynamics, and neuronal adaptation during bursts.
+    \item \textbf{Signal Processing:} Characterizing transient patterns in time-series data.
+    \item \textbf{Machine Learning:} Identifying patterns in spiking data for classification or prediction.
+\end{itemize}
+
+\subsection{Example: Burst Frequency Dynamics}
+Consider a burst with spikes at times $\{t_1, t_2, \dots, t_N\}$:
+\begin{itemize}
+    \item Compute the sequence of instantaneous frequencies $f(t_i)$.
+    \item Visualize $f(t_i)$ as a function of $t_i$ to observe trends.
+    \item Fit an exponential or linear model to describe frequency changes.
+\end{itemize}
+
+
+
+\section{Models of Intra-Burst Frequency Variation}
+There are several models and studies that address intra-burst frequency variation in neuronal activity. These provide insights into the mechanisms and characteristics of burst firing patterns, including variations in intra-burst frequencies.
+\subsection{Komendantov-Kononenko Model}
+The Komendantov-Kononenko model is a conductance-based neuron model capable of generating and recognizing intraburst neural signatures. This model incorporates:
+\begin{itemize}
+\item Mechanisms for slow-wave generation
+\item Spike generation
+\item Calcium currents
+\end{itemize}
+These features allow the model to exhibit rich slow-fast dynamics observed in various neuron types \cite{komendantov1996a} FAUX ?.
+\subsection{Firing Statistics-Based Algorithm}
+Kapucu et al. (2012) proposed a firing statistics-based algorithm for burst detection in neuronal networks with highly variable action potential dynamics. This algorithm:
+\begin{itemize}
+\item Adapts to different intra-burst interval (ISI) distributions
+\item Accounts for variations in intra-burst frequencies
+\end{itemize}
+The algorithm provides a more flexible approach to burst detection in networks with diverse firing patterns \cite{kapucu2012a}.
+\subsection{Chattering Cells}
+Research on chattering cells has demonstrated their ability to generate bursts with:
+\begin{itemize}
+\item Intraburst frequencies ranging from 300 to 750 Hz
+\item Interburst frequencies of 10-80 Hz
+\end{itemize}
+This showcases the capability of certain neuron types to produce varying intra-burst frequencies {gray1996} FAUX perplexity.
+\subsection{Climbing Fibers}
+Studies on climbing fibers have revealed their ability to transmit signals by:
+\begin{itemize}
+\item Modulating their low interburst frequency
+\item Varying the number of spikes within each high-frequency burst
+\end{itemize}
+This suggests that intra-burst frequency variation can serve as a mechanism for information encoding \cite{mathy2009a} FAUX ? (perplexity).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analysis of Intra-Burst Frequency Evolution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\fcite{wilson2002a}  
+
+identifying bursts in neuronal spike trains.
+
+
+\cite{wu_jiannis2019a}
+
+\cite{rieke1999a}
+
+\cite{chen2013a}
+
+
+
+
+The classical references for Burst Detection Methods in neuronal activity analysis are:
+
+Legendy and Salcman's method \cite{legendy1985a}:
+This is one of the earliest and most widely cited methods for burst detection. It introduced the concept of using the Poisson surprise statistic to identify bursts.
+
+Cocatre-Zilgien and Delcomyn's method \cite{cocatre-zilgien1992a}:
+This method proposed using interspike interval (ISI) histograms to identify bursts, which became a foundational approach for many subsequent algorithms.
+
+Tam's method \cite{tam2002a}:
+This algorithm introduced the use of the discharge density to detect bursts, which was particularly useful for analyzing bursts in spike trains with varying firing rates.
+
+Selinger et al.'s method \cite{selinger2007a}:
+This method, often referred to as the "MaxInterval" method, uses predefined parameters to identify bursts based on interspike intervals. It has been widely used due to its simplicity and effectiveness.
+
+Pasquale et al.'s method \cite{pasquale2010a}:
+This approach introduced the use of the logarithmic inter-spike interval histogram for burst detection, which has been particularly useful for analyzing bursts in developing neuronal networks.
+
+
+Review articles \cite{cotterill2016a,cotterill2019a}, see also \cite{pasquale2010a}
+
+
+\bigskip
+
+
+Here are recent references about Burst Detection Methods:
+
+1. Ardelean et al. \cite{ardelean2023a} compare several burst detection algorithms, including ISIn, ISI Rank threshold, Max Interval, Cumulative Moving Average, Rank Surprise, and Poisson Surprise. They also propose a novel method that considers additional features beyond spike timestamps \cite{ardelean2023b}.
+
+2. Hernandes et al. \cite{hernandes2024a} present autoMEA, a machine learning-based software for automated burst detection in multi-electrode array (MEA) datasets. Their approach uses ML models to replicate expert decision-making in parameter selection for the MaxInterval method \cite{hernandes2024a}.
+
+3. A study published in 2024 developed an open-source toolkit for characterizing oscillatory burst detection algorithms. This method includes four processing steps that can be tailored to specific brain states and individuals \cite{chen_ziao2023a}.
+
+4. Karvat et al.\cite{karvat2022a} introduced a real-time data analysis system for detecting short narrowband bursts in local field potentials, specifically focusing on beta-band bursts in rat motor cortex \cite{ardelean2023b}.
+
+5. Seedat et al. \cite{seedat2020a} proposed a methodology for detecting transient bursts in neuronal populations, focusing on transient spectral 'bursts' in functional connectivity \cite{ardelean2023b}.
+
+These recent studies showcase the ongoing development and refinement of burst detection methods in neuronal activity analysis, with a trend towards automated, machine learning-based approaches and methods that can be tailored to specific types of neural data.
+
+
+
+People to follow  Eugen-Richard Ardelean [\href{https://github.com/ArdeleanRichard}{github}] \cite{muresan2022a}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Analysis of Intra-Burst Frequency Evolution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Instantaneous Frequency Analysis}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To analyze the evolution of spike frequency within a burst, we first compute the inter-spike intervals (ISI), defined as:
+
+\begin{equation}
+    \text{ISI}_i = t_{i+1} - t_i
+\end{equation}
+
+where \( t_i \) represents the spike time of the \( i \)-th spike.
+
+The instantaneous frequency is then calculated as:
+
+\begin{equation}
+    f_i = \frac{1}{\text{ISI}_i}
+\end{equation}
+
+where \( f_i \) represents the firing rate at each spike time.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Trend Analysis within Bursts}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To determine whether the firing frequency is increasing, decreasing, or follows a more complex evolution, we can fit a linear regression model:
+
+\begin{equation}
+    f(t) = a t + b
+\end{equation}
+
+where \( a \) represents the slope of the frequency trend. If \( a > 0 \), the frequency increases over time, while \( a < 0 \) indicates a decreasing trend.
+
+For non-linear patterns (e.g., an increase followed by a decrease), we can use polynomial regression:
+
+\begin{equation}
+    f(t) = a t^2 + b t + c
+\end{equation}
+
+where a significant quadratic coefficient (\( a \neq 0 \)) suggests a biphasic trend.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Change Point Detection}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To identify abrupt changes in firing rate within a burst, we can use **change point detection algorithms**, such as:
+
+\begin{itemize}
+    \item Bayesian Change Point Analysis
+    \item Cumulative Sum (CUSUM) Algorithm
+    \item Ruptures Library (Python)
+\end{itemize}
+
+These methods help detect time points where the firing frequency significantly shifts.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Clustering of Burst Dynamics}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Different bursts may follow distinct frequency evolution patterns. To categorize them, we can apply clustering techniques such as:
+
+\begin{itemize}
+    \item K-means clustering: Groups bursts based on their frequency evolution
+    \item Hidden Markov Models (HMMs): Models state transitions in bursting behavior
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Analyzing intra-burst frequency evolution provides insight into the underlying neuronal dynamics. Methods such as **instantaneous frequency analysis, trend analysis, change point detection, and clustering** allow for a comprehensive characterization of bursts.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Classification of Bursts Based on Frequency Evolution}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To classify bursts according to the evolution of their intra-burst spike frequency, we define three main categories:
+
+\begin{enumerate}
+    \item \textbf{Monotonically Decreasing Frequency:} Bursts where the spike frequency statistically decreases over time. These bursts exhibit an increasing inter-spike interval (ISI), meaning that the neurons tend to fire at progressively lower rates within the burst. Mathematically, this condition is expressed as:
+    \begin{equation}
+        \frac{d f}{dt} < 0, \quad \text{or equivalently,} \quad \frac{d \text{ISI}}{dt} > 0.
+    \end{equation}
+    A significant negative slope (\( a < 0 \)) in a linear regression model fitted to the instantaneous frequency over time indicates a decreasing burst.
+
+    \item \textbf{Biphasic (Increasing-then-Decreasing) Frequency:} Bursts where the spike frequency initially increases and then decreases within the burst. These bursts exhibit a non-monotonic trend, often following a parabolic trajectory. This behavior can be detected by fitting a second-degree polynomial model:
+    \begin{equation}
+        f(t) = a t^2 + b t + c,
+    \end{equation}
+    where a statistically significant negative quadratic coefficient (\( a < 0 \)) confirms an initial increase followed by a decrease. Additionally, change point detection methods (e.g., Bayesian Change Point Analysis) can be used to identify the transition point from increasing to decreasing frequency.
+
+    \item \textbf{Other Frequency Patterns:} Bursts that do not fit into the above categories. These may include:
+    \begin{itemize}
+        \item Constant frequency bursts, where there is no significant statistical trend in frequency evolution.
+        \item Erratic bursts with no clear structure in frequency evolution.
+        \item Bursts with multiple peaks or oscillatory frequency changes.
+    \end{itemize}
+    These cases may be best analyzed using clustering techniques such as k-means or Hidden Markov Models (HMMs).
+\end{enumerate}
+
+\subsection{Classification Methods}
+
+To automatically classify bursts into the above categories, we apply the following methods:
+
+\begin{itemize}
+    \item \textbf{Linear Regression:} If the fitted slope (\( a \)) of the instantaneous frequency is significantly negative, classify the burst as a "monotonically decreasing" type.
+    \item \textbf{Polynomial Regression:} If a quadratic fit produces a significant negative coefficient (\( a < 0 \)) and a peak in the middle of the burst, classify the burst as "biphasic."
+    \item \textbf{Change Point Detection:} Algorithms such as the Cumulative Sum (CUSUM) method or the PELT algorithm from the \texttt{ruptures} library in Python can identify bursts with abrupt changes in firing rate.
+    \item \textbf{Clustering (K-means, HMMs):} Unsupervised learning methods can be used to detect more complex patterns that do not fit simple regression models.
+\end{itemize}
+
+\subsection{Application and Interpretation}
+
+Classifying bursts based on intra-burst frequency evolution helps in understanding the underlying neural dynamics. Monotonically decreasing bursts may correspond to neural fatigue or adaptation, while biphasic bursts might indicate excitatory-inhibitory interactions. Other patterns may reflect external modulation or noise effects.
+
+\section{Functional Data Analysis Approach to Burst Classification}
+
+Functional Data Analysis (FDA) provides a powerful framework for classifying bursts based on the evolution of their instantaneous spiking rate. Instead of analyzing individual time points, FDA treats the entire firing rate evolution as a continuous function, allowing for smooth estimation, dimensionality reduction, and classification.
+
+\subsection{Estimating the Instantaneous Spiking Rate Curve}
+
+Given a set of spike times \( t_1, t_2, \dots, t_n \) within a burst, we estimate the instantaneous spiking rate \( f(t) \) using kernel density estimation (KDE) or spline smoothing. A common choice is a Gaussian kernel:
+
+\begin{equation}
+    \hat{f}(t) = \sum_{i=1}^{n} K_h (t - t_i),
+\end{equation}
+
+where \( K_h (t) \) is a Gaussian kernel with bandwidth \( h \), defined as:
+
+\begin{equation}
+    K_h (t) = \frac{1}{\sqrt{2\pi h^2}} \exp\left(-\frac{t^2}{2h^2}\right).
+\end{equation}
+
+Alternatively, cubic spline smoothing can be applied to obtain a functional representation of the spike rate:
+
+\begin{equation}
+    \hat{f}(t) = \sum_{j=1}^{m} \beta_j B_j(t),
+\end{equation}
+
+where \( B_j(t) \) are basis functions (e.g., B-splines), and \( \beta_j \) are fitted coefficients.
+
+\subsection{Dimensionality Reduction and Feature Extraction}
+
+To classify bursts, we extract meaningful features from the estimated spiking rate functions:
+
+\begin{itemize}
+    \item \textbf{Functional Principal Component Analysis (fPCA):} Decomposes the firing rate curves into a small set of principal components, capturing dominant variation patterns.
+    \item \textbf{Shape Descriptors:} Features such as peak frequency, time to peak, and curvature can help distinguish burst types.
+    \item \textbf{Derivative-Based Features:} The first and second derivatives of \( \hat{f}(t) \) can highlight increasing, decreasing, or biphasic trends.
+\end{itemize}
+
+\subsection{Classification Methods}
+
+Once bursts are represented in a lower-dimensional functional space, we apply classification algorithms:
+
+\begin{itemize}
+    \item \textbf{Clustering (K-means, Hierarchical Clustering):} Groups bursts with similar firing rate evolution patterns.
+    \item \textbf{Supervised Learning (SVM, Random Forest):} Trains models on labeled bursts to predict new classifications.
+    \item \textbf{Functional Discriminant Analysis (FDA):} Extends classical discriminant analysis to classify functions rather than discrete variables.
+\end{itemize}
+
+\subsection{Application and Interpretation}
+
+By analyzing bursts through FDA, we can capture smooth trends and classify them based on their global temporal structure. This approach allows for a more robust classification compared to pointwise ISI analysis, making it particularly useful for detecting complex burst dynamics in electrophysiology data.
+
+
+\section{dddd}
+Here are relevant references for statistical analysis of bursts in neural electrophysiological data, focusing on burst detection and classification:
+
+Burst detection:
+
+Kapucu et al. \cite{kapucu2012a}
+propose an adaptive firing statistics-based algorithm for detecting bursts in developing neuronal networks1. This method is particularly useful for networks with highly variable action potential dynamics, such as those derived from human embryonic stem cells.
+
+Karvat et al. \cite{karvat2022a} present a real-time data analysis system capable of detecting short narrowband bursts in local field potentials (LFPs)2. Their method demonstrates the ability to identify beta-band bursts in rat motor cortex and use them for neurofeedback.
+
+Cotterill et al. \cite{cotterill2016a} provide a comprehensive comparison of eight existing methods for identifying bursts in neuronal spike trains3. This study offers an unbiased quantitative assessment of various burst detection algorithms.
+
+Burst classification:
+
+Pasquale et al. \cite{pasquale2010a} introduce a method using the logarithmic histogram of interspike intervals (ISIs) to calculate an ISI threshold for detecting and classifying bursts1. This approach has been applied to rat cortical neurons and can potentially be adapted for other types of neuronal networks.
+
+Karvat et al.'s \cite{karvat2022a} real-time burst detection system also allows for the classification of bursts based on their frequency content, specifically focusing on beta-band (15-30 Hz) oscillations2. This method enables the investigation of frequency-specific burst phenomena.
+
+Advanced analysis techniques:
+
+Seedat et al. propose a novel methodology for burst identification and connectivity analysis6. Their approach focuses on transient spectral 'bursts' in functional connectivity, which is crucial for investigating neural oscillations.
+These references provide a solid foundation for understanding and implementing statistical analyses of bursts in neural electrophysiological data, covering both detection and classification aspects.
+frontiersin.org
+
+
+\section{eee}
+
+Yes, there is specific work on intraburst analysis and analysis of spike rates during bursts. Several studies have focused on these aspects:
+
+Intraburst fingerprints and signatures:
+
+Researchers have investigated the ability of neurons to detect specific presynaptic activation sequences using intraburst fingerprints1. These intraburst neural signatures are characterized by distinctive interspike interval (ISI) patterns within bursts1.
+
+Spike rate within bursts (SRWB):
+
+Studies have analyzed the spike rate within bursts as a metric for characterizing neural activity. SRWB is calculated as the total number of spikes occurring during bursts within an episode divided by the total duration of the bursts2.
+
+Intraburst ISI analysis:
+
+The time intervals between consecutive spikes within a burst (intraburst ISIs) are crucial for burst detection and characterization. These intervals typically range from 2-3ms to 7-9ms3.
+
+Correlation analysis of intraburst spikes:
+
+Research has shown that correlations between intraburst sub-spikes are higher than those between burst sub-spikes and tonic activity of the same channel. This is due to the more similar waveform shapes of sub-spikes originating from the same neuron3.
+
+Adaptive burst detection methods:
+
+Some algorithms, like the Cumulative Moving Average (CMA) method, have been developed to analyze intraburst dynamics in networks with highly variable action potential dynamics, such as those derived from human embryonic stem cells5.
+
+Burst size analysis:
+
+Studies have examined the distribution of burst sizes (number of spikes per burst) in neurons, providing insights into intraburst spike patterns6.
+
+Intraburst spike count and synaptic efficacy:
+
+Research has shown that the number of intraburst spikes can influence synaptic efficacy, with post-synaptic cells able to distinguish events based on the number of preceding short interspike intervals7.
+
+These studies demonstrate the importance of intraburst analysis in understanding neural coding and information processing in neuronal networks.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Some Python packages}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\textbf{Neo} : conçu pour lire et écrire des fichiers multicanaux de données électrophysiologiques dans divers formats (NeuroExplorer, Spike2, Blackrock, Plexon), et compatible avec Elephant et SpikeInterface pour les analyses avancées.
+\begin{iplisting}
+import neo
+\end{iplisting}
+
+\textbf{Elephant} : basé sur Neo, Elephant fournit des outils d'analyse statistique et temporelle, particulièrement utiles pour la détection de pointes, l'analyse de corrélations et la synchronisation neuronale.
+\begin{iplisting}
+import elephant
+\end{iplisting}
+
+\textbf{PySpike} : permet l'analyse des trains de pointes neuronales pour mesurer la similarité temporelle, utilisé pour analyser les schémas de décharge dans les signaux électrophysiologiques.
+\begin{iplisting}
+import pyspike
+\end{iplisting}
+
+\textbf{SpikeInterface} : un ensemble d'outils pour le tri, le traitement et l'analyse des pointes dans les signaux électrophysiologiques.
+\begin{iplisting}
+import spikeinterface
+\end{iplisting}
+
+
+
+La bibliothèque pyABF en Python est conçue pour manipuler les fichiers ABF (Axon Binary File), un format couramment utilisé dans les expériences d’électrophysiologie, en particulier pour les enregistrements neuronaux. Ces fichiers, générés par le logiciel pClamp de Molecular Devices, sont idéaux pour stocker des données temporelles d’expériences de stimulation-réponse.
+
+Fonctionnalités de pyABF
+Avec pyABF, vous pouvez :
+
+Lire et accéder aux données : extraction des balayages (sweeps), canaux, et informations de temps.
+Obtenir les métadonnées : fréquence d'échantillonnage, nombre de balayages et protocoles expérimentaux.
+Visualiser les signaux électrophysiologiques en combinaison avec des bibliothèques comme matplotlib.
+Exemple de code en pyABF
+Voici un exemple de base pour charger et visualiser des données dans un fichier ABF avec pyABF :
+
+
+
+\begin{iplisting}
+import pyabf
+import matplotlib.pyplot as plt
+
+# Charger le fichier ABF
+abf = pyabf.ABF("exemple.abf")
+
+# Accéder au temps (en secondes) 
+#     et aux données du premier balayage
+temps = abf.sweepX
+donnees = abf.sweepY
+
+# Tracer les données
+plt.plot(temps, donnees)
+plt.xlabel("Temps (s)")
+plt.ylabel("Amplitude")
+plt.title("Visualisation des données ABF")
+plt.show()
+\end{iplisting}
+Dans cet exemple, les propriétés \texttt{.sweepX} et \texttt{.sweepY} de \texttt{pyABF} fournissent des accès simplifiés aux valeurs de temps et d’amplitude, permettant une visualisation rapide du signal.
+
+Utilisation en recherche
+\texttt{pyABF} est particulièrement utile pour les neuroscientifiques et les électrophysiologistes qui manipulent des données ABF en Python. Associée à des bibliothèques comme NumPy et SciPy pour le traitement de signal, ou matplotlib pour la visualisation, elle devient un outil puissant pour l’analyse et l’exploitation des données expérimentales.
+
+Neo : Neo est une bibliothèque qui prend en charge de nombreux formats de données neuroscientifiques (ABF, Spike2, NeuroExplorer, etc.). Elle facilite la manipulation des signaux en les structurant dans des objets cohérents (segments, canaux, etc.). Elle est souvent utilisée en conjonction avec d'autres bibliothèques de traitement de signal.
+SpikeInterface : Cet ensemble de bibliothèques est spécialisé dans l'analyse et le tri des spikes (potentiels d'action). SpikeInterface permet le chargement de données de différents formats, l’extraction de spikes, et le tri automatique pour des analyses neuroscientifiques avancées.
+MNE-Python : Bien que principalement utilisé pour l’analyse d'EEG/MEG, MNE est aussi pertinent pour l’électrophysiologie, notamment dans le traitement de signaux, la visualisation et l'analyse de données cérébrales.
+pywavelets : Bien que ce soit une bibliothèque générique de traitement de signal, pywavelets est souvent utilisée pour l'analyse des signaux neuronaux en raison de sa capacité à décomposer les signaux en ondelettes, permettant l'analyse des composants de fréquence.
+Elephant : Spécifiquement conçu pour l'analyse des données de neurophysiologie, Elephant offre des outils d'analyse pour les signaux neuronaux, y compris les méthodes de calcul de corrélation, le traitement de la synchronisation des spikes et l'analyse spectrale.
+
+
+
+\url{https://pyforneuro.com}
+
+
+\url{https://neuraldatascience.io/} This online textbook is aimed primarily at students and researchers in neuroscience and cognitive psychology who want to learn how to work with and make sense of data using Python.
+\href{https://aaronjnewman.com}{Aaron J. Newman}, Department of Psychology \&\ Neuroscience, Dalhousie University, 
+
+\href{https://github.com/neural-data-science}{github repo}
+
+
+
+\url{https://mrgreene09.github.io/computational-neuroscience-textbook/}
+
+\url{https://github.com/analyticalmonk/awesome-neuroscience}
+
+\url{https://mark-kramer.github.io/Case-Studies-Python/01.html}
+
+\url{https://medium.com/@chanmickyyun/absolute-beginner-computational-neuroscience-with-python-6e1d2ddd410a}
+
+\url{https://github.com/esi-neuroscience/syncopy} \url{https://syncopy.readthedocs.io/en/latest/}
+
+\url{https://github.com/esi-neuroscience}
+
+\url{https://www.gsnetwork.com/open-source-neuroscience-tools-using-python/}
+
+\url{https://pyforneuro.com}
+
+\url{https://docs.neuroml.org/Landing.html}
+
+\url{https://www.fabriziomusacchio.com/teaching/}
+
+\end{multicols}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+[
+\section{Références}
+]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nocite{mullere2015a,nylen2017a,davison2009a,bruderle2009a,eppler2009a,sauer2016a,van_geit2016a,ellis2019b,viejo2023a}
+
+\renewcommand*{\bibfont}{\small}
+\printbibliography[heading=none]
+\balance
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\end{document}
+
+
