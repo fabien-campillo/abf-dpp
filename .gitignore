@@ -1,0 +1,31 @@
+*.log
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.idx
+*.tmp
+*.out
+*.synctex.gz
+*.bcf
+*.run.xml
+
+z_old/*
+
+docs/*
+
+latex/paper.pdf
+
+.jupyter/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore sensitive config files
+config.json
+secrets.env
