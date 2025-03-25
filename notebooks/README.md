@@ -1,5 +1,5 @@
-# ABF-DPP
-## *ABF Data Processing and Plotting*
+# PEPYNA
+
 
 *Tools to analyze `abf` files and directories containing `abf` files.*  
 
