@@ -13,20 +13,20 @@ A set of Python tools (scripts and notebooks) for analyzing electrophysiology da
 ## Structure
 
 ```
-abf-dpp_github/
-├── LICENSE                # licence file
-├── README.md              # this file
-├── check_dependencies.py  # checks required dependencies for execution
-├── data/                  # data to analyze or already analyzed (*)
-├── docs_hub/              # jupyter book and latex 
-├── notebooks/             # notebooks (*)
-├── python-lib/            # Python library (core functionalities) (*)
-├── sandbox/               # tests
-├── scripts/               # scripts for os-x shell (*)
-└── setup_env.sh           # script to set up environment
+   	abf-dpp_github/
+   	├── LICENSE                # licence file
+   	├── README.md              # this file
+   	├── check_dependencies.py  # checks required dependencies for execution
+*  	├── data/                  # data to analyze or already analyzed (*)
+~ 	├── docs_hub/              # jupyter book and latex 
+*  	├── notebooks/             # notebooks (*)
+~ 	├── python_lib/            # Python library (core functionalities) (*)
+   	├── sandbox/               # tests
+*  	├── scripts/               # scripts for os-x shell (*)
+   	└── setup_env.sh           # script to set up environment
 
-(*) The tools are in notebooks/ and scripts/, data/ contains also 
-    notebooks to analyze the data. 
+(*) these dirs already contain some tools 
+(~)	 in contruction
     
 Each subdirectory includes a README.md file.
 
