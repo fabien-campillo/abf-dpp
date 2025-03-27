@@ -10,7 +10,7 @@
 *.bcf
 *.run.xml
 
-data/.virtual_documents/*
+*/.virtual_documents/*
 
 z_old/*
 
