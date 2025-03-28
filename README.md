@@ -13,7 +13,7 @@ A set of Python tools (scripts and notebooks) for analyzing electrophysiology da
 ## Structure
 
 ```
-   	abf-dpp_github/
+   abf-dpp_github/
    ├── LICENSE                # licence file
    ├── README.md              # this file
    ├── check_dependencies.py  # checks required dependencies for execution
