@@ -1,19 +1,15 @@
 # PEPYNA
 
-## *Python-based Electrophysiology Neuron Yield & Analysis*
+**Python-based Electrophysiology Neuron Yield & Analysis**
 
 
 This project focuses on analyzing **electrophysiology data**, initially starting with `ABF` files, and potentially expanding to other formats. It involves processing, plotting, and basics statistical analysis of **single-neuron data** using Python scripts and notebooks. Scripts are designed for `macOS`. The goal is to provide efficient tools for researchers in neurophysiology, facilitating data exploration and visualization.
 
 
-
-**Purpose:** 
-A set of Python tools (scripts and notebooks) for analyzing electrophysiology data.
-
 ## Structure
 
 ```
-   	abf-dpp_github/
+   abf-dpp_github/
    ├── LICENSE                # licence file
    ├── README.md              # this file
    ├── check_dependencies.py  # checks required dependencies for execution
