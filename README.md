@@ -1,4 +1,3 @@
---
 # PEPYNA
 
 **Python-based Electrophysiology Neuron Yield & Analysis**
